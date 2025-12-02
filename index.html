@@ -1,0 +1,239 @@
+﻿<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>沢多恩 - 링크 허브</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+html, body { height: 100%; margin:0; font-family:'Noto Sans JP',sans-serif; }
+body {
+  background: radial-gradient(ellipse at center,#0b0c1b 0%,#0a0a1a 100%);
+  color:#fff;
+  overflow-x:hidden;
+  position:relative;
+}
+
+/* 은하수 중앙 빛줄기 */
+body::before{
+  content:"";
+  position:absolute;
+  top:0; left:50%;
+  width:10px; height:100%;
+  background:linear-gradient(to bottom, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 50%);
+  transform:translateX(-50%) rotate(25deg);
+  pointer-events:none;
+}
+
+/* 별 */
+.star{
+  position:absolute;
+  border-radius:50%;
+  animation:twinkle linear infinite;
+}
+@keyframes twinkle{
+  0%,50%,100{ opacity:0; }
+  25%,75%{ opacity:1; }
+}
+
+/* 헤더 */
+header{
+  padding:40px 20px 20px;
+  position:relative;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:20px;
+}
+.profile-pic{
+  width:180px;
+  height:180px;
+  background:rgba(255,255,255,0.05);
+  border:2px solid #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.profile-pic img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
+.intro{
+  max-width:400px;
+  font-size:0.95em;
+  line-height:1.5;
+  color:#fff;
+  text-align:center;
+}
+.intro h1{font-size:2.5em;margin:0;letter-spacing:2px;font-weight:700;}
+
+/* 카드 */
+.voice-card{
+  display:flex;
+  max-width:600px;
+  border:2px solid #fff;
+  background:rgba(255,255,255,0.05);
+  margin:20px auto;
+  text-align:left;
+  flex-wrap:wrap;
+}
+.face{
+  flex:1;
+  min-width:150px;
+  height:150px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-right:2px solid #fff;
+}
+.face img, .face iframe{width:100%;height:100%;object-fit:cover;}
+.info{
+  flex:1;
+  min-width:150px;
+  padding:10px 15px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.title{font-weight:700;margin-bottom:5px;font-size:1.2em;}
+.desc{font-size:0.9em;color:#ccc;margin-bottom:10px;}
+.download-btn{
+  display:inline-block;
+  padding:8px 20px;
+  background:#303060;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:all 0.3s ease;
+}
+.download-btn:hover{
+  background:linear-gradient(90deg,#101020,#202040);
+  transform:scale(1.05);
+}
+
+/* SNS 링크 */
+.links{
+  margin:40px auto;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:30px;
+}
+.link-group{display:flex; flex-direction:column; align-items:center;}
+.link-btn{
+  display:inline-block;
+  padding:10px 25px;
+  background:rgba(255,255,255,0.1);
+  color:#fff;
+  border:2px solid #fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:all 0.3s ease;
+}
+.link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
+.link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
+
+/* 데모송 카드 가로 분할 */
+.demo-card{display:flex; flex-direction:column;}
+.demo-video{height:150px; background:rgba(255,255,255,0.05); border-bottom:2px solid #fff; display:flex; align-items:center; justify-content:center;}
+.demo-credit{padding:10px 15px;}
+
+@media (max-width:600px){
+  header{flex-direction:column;}
+  .intro{max-width:90%;text-align:center;}
+  .voice-card{flex-direction:column;max-width:90%;}
+  .face{width:100%;height:200px;border-right:none;border-bottom:2px solid #fff;}
+  .demo-card{max-width:90%;}
+  .demo-video{height:200px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="profile-pic">
+    <!-- <img src="profile.jpg" alt="Profile"> -->
+  </div>
+  <div class="intro">
+    <h1>沢多恩</h1>
+    初めまして、沢多恩（さわだおん）と申します。<br>
+    好きな曲を歌ったり演奏したり調声したりしてます。
+  </div>
+</header>
+
+<!-- 사와네 오프 카드 -->
+<div class="voice-card">
+  <div class="face"></div>
+  <div class="info">
+    <div class="title">沢音オフ</div>
+    <div class="desc">
+      otoing：파슈様<br>
+      standing：シロマル様<br>
+      special thanks：AisE様<br>
+      voice provider：沢多恩
+    </div>
+    <a class="download-btn" href="https://example.com/download" target="_blank">Download</a>
+  </div>
+</div>
+
+<!-- 데모송 카드 -->
+<div class="voice-card demo-card">
+  <div class="demo-video">
+    <!-- 영상 공간 -->
+  </div>
+  <div class="demo-credit">
+    original：Kai様<br>
+    illustration：yoake<br>
+    vocal：沢音オフ<br>
+    tuning･mix：沢多恩
+  </div>
+</div>
+
+<!-- 우타이테 데모 카드 -->
+<div class="voice-card">
+  <div class="face">
+    <iframe src="https://x.com/on3ic/status/1972895965796532501?s=61" title="歌ってみた" allowfullscreen style="width:100%;height:100%;border:none;"></iframe>
+  </div>
+  <div class="info">
+    <div class="title">歌ってみた</div>
+    <div class="desc">
+      original：seiza様<br>
+      vocal･mix：沢多恩<br>
+      本家様の動画をお借りしております
+    </div>
+  </div>
+</div>
+
+<!-- SNS 링크 (맨 아래) -->
+<div class="links">
+  <div class="link-group">
+    <a class="link-btn" href="https://www.youtube.com/" target="_blank">YouTube</a>
+    <div class="link-desc">フル投稿してます</div>
+  </div>
+  <div class="link-group">
+    <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
+    <div class="link-desc">ショートカバー</div>
+  </div>
+</div>
+
+<!-- 별 생성 -->
+<script>
+const starCount = 150;
+const pageHeight = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
+const pageWidth = Math.max(document.body.scrollWidth,document.documentElement.scrollWidth);
+const colors = ['#fff','#d0d0ff','#e0e0ff','#f0f0ff'];
+
+for(let i=0;i<starCount;i++){
+  let star=document.createElement('div');
+  star.className='star';
+  let size=Math.random()*3+1;
+  star.style.width=star.style.height=size+'px';
+  star.style.top=Math.random()*pageHeight+'px';
+  star.style.left=Math.random()*pageWidth+'px';
+  star.style.background=colors[Math.floor(Math.random()*colors.length)];
+  star.style.animationDuration=(Math.random()*3+6)+'s';
+  star.style.animationDelay=Math.random()*2+'s';
+  document.body.appendChild(star);
+}
+</script>
+
+</body>
+</html>
