@@ -59,7 +59,7 @@ header{
   letter-spacing:2px;
 }
 
-/* 오른쪽 사진 박스 */
+/* 오른쪽 사진 박스 (비워둠) */
 .profile-pic{
   width:180px;
   height:180px;
@@ -69,7 +69,6 @@ header{
   align-items:center;
   justify-content:center;
 }
-.profile-pic img{ width:100%; height:100%; object-fit:cover; }
 
 /* 카드 */
 .voice-card{
@@ -142,20 +141,6 @@ header{
 .link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
 .link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
 
-/* 반응형 */
-@media (max-width:600px){
-  header{flex-direction:column; gap:20px;}
-  .intro{max-width:90%; text-align:center;}
-  .profile-pic{margin:0 auto;}
-  .voice-card{flex-direction:column; max-width:90%;}
-  .face{width:100%; height:200px; border-right:none; border-bottom:2px solid #fff;}
-  .demo-card{max-width:90%;}
-  .demo-video{height:200px;}
-}
-</style>
-</head>
-<body>
-
 <header>
   <div class="intro">
     <h1>沢多恩</h1>
@@ -163,7 +148,7 @@ header{
     好きな曲を歌ったり演奏したり調声したりしてます。
   </div>
   <div class="profile-pic">
-    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/sawaneoff.jpg" alt="プロフィール">
+    <!-- 사진 선택 전 빈 상태 -->
   </div>
 </header>
 
@@ -196,37 +181,6 @@ header{
     tuning･mix：沢多恩
   </div>
 </div>
-
-<div class="voice-card">
-  <div class="face" style="flex:1.5; min-width:250px; height:250px;">
-    <blockquote class="twitter-video" data-dnt="true" data-theme="dark">
-      <a href="https://x.com/on3ic/status/1972895965796532501">Tweet</a>
-    </blockquote>
-  </div>
-  <div class="info" style="flex:1.2; min-width:200px; padding:15px;">
-    <div class="title">歌ってみた</div>
-    <div class="desc">
-      original：seiza様<br>
-      vocal･mix：沢多恩<br>
-    </div>
-  </div>
-</div>
-
-<!-- 트위터 위젯 JS -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<!-- CSS로 프로필/작성자/날짜 제거 -->
-<style>
-.twitter-video .twitter-tweet-header,
-.twitter-video .twitter-tweet-footer,
-.twitter-video .twitter-tweet-metadata {
-  display: none !important;
-}
-.twitter-video iframe {
-  width: 100% !important;
-  height: 100% !important;
-}
-</style>
 
 <!-- SNS 링크 -->
 <div class="links">
