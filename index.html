@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+3<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -188,22 +188,40 @@ header{
   </div>
 </div>
 
-<!-- 우타이테 데모 카드 -->
 <div class="voice-card">
-  <div class="face" style="flex:1.5; min-width:250px; height:auto;">
+  <div class="face" style="flex:1.5; min-width:250px; height:250px;">
     <blockquote class="twitter-video" data-dnt="true" data-theme="dark">
-      <a href="https://twitter.com/on3ic/status/1972895965796532501">Tweet</a>
+      <a href="https://x.com/on3ic/status/1972895965796532501">Tweet</a>
     </blockquote>
-    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
   </div>
   <div class="info" style="flex:1.2; min-width:200px; padding:15px;">
     <div class="title">歌ってみた</div>
     <div class="desc">
       original：seiza様<br>
       vocal･mix：沢多恩<br>
+      左の動画をクリックするとTwitterで再生されます
     </div>
   </div>
 </div>
+
+<!-- 트위터 위젯 JS (필수) -->
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!-- CSS로 프로필/작성자/날짜 제거 -->
+<style>
+/* 프로필/작성자/팔로우 버튼 숨기기 */
+.twitter-video .twitter-tweet-header,
+.twitter-video .twitter-tweet-footer,
+.twitter-video .twitter-tweet-metadata {
+  display: none !important;
+}
+
+/* iframe 영상만 꽉 채우기 */
+.twitter-video iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+</style>
 
 <!-- SNS 링크 (맨 아래) -->
 <div class="links">
