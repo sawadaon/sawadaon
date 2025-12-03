@@ -2,24 +2,23 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>沢多恩 - 링크 허브</title>
+<title>沢多恩 </title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body { height: 100%; margin:0; font-family:'Noto Sans JP',sans-serif; }
+html, body { width:100%; height:100%; margin:0; padding:0; font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
 body {
   background: radial-gradient(ellipse at center, #03030a 0%, #000010 90%);
   color:#fff;
-  overflow-x:hidden;
   position:relative;
 }
 
 /* 은하 레이어 */
 .galaxy-layer {
   position: absolute;
-  width: 200%;
-  height: 200%;
-  top: -50%;
-  left: -50%;
+  top:0; left:0;
+  width:100vw;
+  height:100vh;
   background: url('galaxy.png') no-repeat center;
   background-size: cover;
   pointer-events: none;
@@ -28,7 +27,6 @@ body {
 .galaxy-layer.back { z-index:0; animation: spin 120s linear infinite; }
 .galaxy-layer.middle { z-index:0; animation: spin 90s linear infinite; }
 .galaxy-layer.front { z-index:0; animation: spin 60s linear infinite; }
-
 @keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
 
 /* 은하수 중앙 빛줄기 */
@@ -62,15 +60,22 @@ body::before{
 
 /* 헤더 */
 header{
+  display:flex;
+  justify-content:flex-end; /* 오른쪽 끝 기준 */
+  align-items:center;
+  gap:20px;
   padding:40px 20px 20px;
   position:relative;
   z-index:2;
-  display:flex;
-  justify-content:flex-start; /* 왼쪽 정렬 */
-  align-items:center;
-  flex-wrap:wrap;
-  gap:20px;
 }
+.intro{
+  text-align:right; /* 박스 기준 오른쪽에서 왼쪽으로 붙임 */
+  max-width:400px;
+  font-size:0.95em;
+  line-height:1.5;
+  color:#fff;
+}
+.intro h1{font-size:2.5em;margin:0 0 10px 0;letter-spacing:2px;font-weight:700;}
 .profile-pic{
   width:180px;
   height:180px;
@@ -79,18 +84,9 @@ header{
   display:flex;
   align-items:center;
   justify-content:center;
-  order:2; /* 오른쪽 */
+  order:2;
 }
 .profile-pic img{width:100%;height:100%;object-fit:cover;border-radius:50%;}
-.intro{
-  max-width:400px;
-  font-size:0.95em;
-  line-height:1.5;
-  color:#fff;
-  text-align:left; /* 왼쪽 정렬 */
-  order:1;
-}
-.intro h1{font-size:2.5em;margin:0 0 10px 0;letter-spacing:2px;font-weight:700;}
 
 /* 카드 */
 .voice-card{
@@ -161,14 +157,15 @@ header{
 .link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
 .link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
 
-/* 데모송 카드 가로 분할 */
+/* 데모송 카드 */
 .demo-card{display:flex; flex-direction:column;}
 .demo-video{height:150px; background:rgba(255,255,255,0.05); border-bottom:2px solid #fff; display:flex; align-items:center; justify-content:center;}
 .demo-credit{padding:10px 15px;}
 
+/* 반응형 */
 @media (max-width:600px){
   header{flex-direction:column; align-items:center;}
-  .intro{max-width:90%; text-align:center; order:1;}
+  .intro{max-width:90%; text-align:center;}
   .profile-pic{order:2;}
   .voice-card{flex-direction:column;max-width:90%;}
   .face{width:100%;height:200px;border-right:none;border-bottom:2px solid #fff;}
@@ -228,6 +225,7 @@ header{
   </div>
 </div>
 
+<!-- 트위터 카드 -->
 <div class="voice-card">
   <div class="face" style="flex:1.5; min-width:250px; height:250px;">
     <blockquote class="twitter-video" data-dnt="true" data-theme="dark">
@@ -283,8 +281,8 @@ for(let i=0;i<starCount;i++){
 
 // 마우스 패럴랙스 (은하 레이어만)
 document.addEventListener('mousemove', e=>{
-  const x = pageWidth/2 - e.clientX;
-  const y = pageHeight/2 - e.clientY;
+  const x = window.innerWidth/2 - e.clientX;
+  const y = window.innerHeight/2 - e.clientY;
   document.querySelector('.galaxy-layer.back').style.transform =
     `translate(${x*0.01}px, ${y*0.01}px) rotate(0deg)`;
   document.querySelector('.galaxy-layer.middle').style.transform =
