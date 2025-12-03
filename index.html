@@ -2,8 +2,8 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<title>沢多恩 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沢多恩</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
 html, body { width:100%; height:100%; margin:0; padding:0; font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
@@ -13,23 +13,7 @@ body {
   position:relative;
 }
 
-/* 은하 레이어 */
-.galaxy-layer {
-  position: absolute;
-  top:0; left:0;
-  width:100vw;
-  height:100vh;
-  background: url('galaxy.png') no-repeat center;
-  background-size: cover;
-  pointer-events: none;
-  transition: transform 0.1s ease-out;
-}
-.galaxy-layer.back { z-index:0; animation: spin 120s linear infinite; }
-.galaxy-layer.middle { z-index:0; animation: spin 90s linear infinite; }
-.galaxy-layer.front { z-index:0; animation: spin 60s linear infinite; }
-@keyframes spin { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
-
-/* 은하수 중앙 빛줄기 */
+/* 은하 중앙 빛줄기 */
 body::before{
   content:"";
   position:absolute;
@@ -41,13 +25,6 @@ body::before{
 }
 
 /* 별 */
-.star-container {
-  position:absolute;
-  width:100%;
-  height:100%;
-  top:0; left:0;
-  pointer-events:none;
-}
 .star{
   position:absolute;
   border-radius:50%;
@@ -57,31 +34,42 @@ body::before{
   0%,50%,100%{ opacity:0; }
   25%,75%{ opacity:1; }
 }
-header {
-  display: flex;
-  justify-content: center; /* 화면 중앙 */
-  align-items: center;
-  gap: 20px;
-  padding: 40px 20px 20px;
-  position: relative;
-  z-index: 2;
+
+/* 헤더 */
+header{
+  display:flex;
+  justify-content:center; /* 화면 중앙 */
+  align-items:center;
+  gap:40px;
+  padding:40px 20px 20px;
+  position:relative;
+  z-index:2;
+  flex-wrap:wrap;
 }
 
-.intro {
-  text-align: left; /* 사진 옆에서 왼쪽으로 붙임 */
-  max-width: 400px;
+/* 왼쪽 글 */
+.intro{
+  max-width:400px;
+  text-align:left;
+}
+.intro h1{
+  font-size:2.5em;
+  margin:0 0 10px 0;
+  font-weight:700;
+  letter-spacing:2px;
 }
 
-.profile-pic {
-  width: 180px;
-  height: 180px;
-  background: rgba(255,255,255,0.05);
-  border: 2px solid #fff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 오른쪽 사진 박스 */
+.profile-pic{
+  width:180px;
+  height:180px;
+  background:rgba(255,255,255,0.05);
+  border:2px solid #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-
+.profile-pic img{ width:100%; height:100%; object-fit:cover; }
 
 /* 카드 */
 .voice-card{
@@ -91,21 +79,18 @@ header {
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
   margin:20px auto;
-  text-align:left;
   flex-wrap:wrap;
-  position:relative;
-  z-index:2;
+  text-align:left;
 }
 .face{
   flex:1;
   min-width:180px;
-  height:auto;
   display:flex;
   align-items:center;
   justify-content:center;
   border-right:2px solid #fff;
 }
-.face img, .face iframe{width:100%;height:100%;object-fit:cover;}
+.face img{ width:100%; height:100%; object-fit:cover; }
 .info{
   flex:2;
   min-width:300px;
@@ -114,8 +99,8 @@ header {
   flex-direction:column;
   justify-content:center;
 }
-.title{font-weight:700;margin-bottom:5px;font-size:1.2em;}
-.desc{font-size:0.9em;color:#ccc;margin-bottom:10px;}
+.title{ font-weight:700; margin-bottom:5px; font-size:1.2em; }
+.desc{ font-size:0.9em; color:#ccc; margin-bottom:10px; }
 .download-btn{
   display:inline-block;
   padding:8px 20px;
@@ -129,6 +114,11 @@ header {
   background:linear-gradient(90deg,#101020,#202040);
   transform:scale(1.05);
 }
+
+/* 데모송 카드 */
+.demo-card{ display:flex; flex-direction:column; }
+.demo-video{ height:150px; background:rgba(255,255,255,0.05); border-bottom:2px solid #fff; display:flex; align-items:center; justify-content:center; }
+.demo-credit{ padding:10px 15px; }
 
 /* SNS 링크 */
 .links{
@@ -152,38 +142,19 @@ header {
 .link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
 .link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
 
-/* 데모송 카드 */
-.demo-card{display:flex; flex-direction:column;}
-.demo-video{height:150px; background:rgba(255,255,255,0.05); border-bottom:2px solid #fff; display:flex; align-items:center; justify-content:center;}
-.demo-credit{padding:10px 15px;}
-
 /* 반응형 */
 @media (max-width:600px){
-  header{flex-direction:column; align-items:center;}
+  header{flex-direction:column; gap:20px;}
   .intro{max-width:90%; text-align:center;}
-  .profile-pic{order:2;}
-  .voice-card{flex-direction:column;max-width:90%;}
-  .face{width:100%;height:200px;border-right:none;border-bottom:2px solid #fff;}
+  .profile-pic{margin:0 auto;}
+  .voice-card{flex-direction:column; max-width:90%;}
+  .face{width:100%; height:200px; border-right:none; border-bottom:2px solid #fff;}
   .demo-card{max-width:90%;}
   .demo-video{height:200px;}
 }
-
-/* 트위터 카드 iframe */
-.twitter-video .twitter-tweet-header,
-.twitter-video .twitter-tweet-footer,
-.twitter-video .twitter-tweet-metadata { display: none !important; }
-.twitter-video iframe { width: 100% !important; height: 100% !important; }
 </style>
 </head>
 <body>
-
-<!-- 은하 레이어 -->
-<div class="galaxy-layer back"></div>
-<div class="galaxy-layer middle"></div>
-<div class="galaxy-layer front"></div>
-
-<!-- 별 -->
-<div class="star-container"></div>
 
 <header>
   <div class="intro">
@@ -191,12 +162,16 @@ header {
     初めまして、沢多恩（さわだおん）と申します。<br>
     好きな曲を歌ったり演奏したり調声したりしてます。
   </div>
-  <div class="profile-pic"></div>
+  <div class="profile-pic">
+    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/sawaneoff.jpg" alt="プロフィール">
+  </div>
 </header>
 
 <!-- 사와네 오프 카드 -->
 <div class="voice-card">
-  <div class="face"></div>
+  <div class="face">
+    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/sawaneoff.jpg" alt="사와네 오프">
+  </div>
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
@@ -211,7 +186,9 @@ header {
 
 <!-- 데모송 카드 -->
 <div class="voice-card demo-card">
-  <div class="demo-video"></div>
+  <div class="demo-video">
+    <!-- 영상 공간 -->
+  </div>
   <div class="demo-credit">
     original：Kai様<br>
     illustration：yoake<br>
@@ -220,7 +197,6 @@ header {
   </div>
 </div>
 
-<!-- 트위터 카드 -->
 <div class="voice-card">
   <div class="face" style="flex:1.5; min-width:250px; height:250px;">
     <blockquote class="twitter-video" data-dnt="true" data-theme="dark">
@@ -236,7 +212,21 @@ header {
   </div>
 </div>
 
+<!-- 트위터 위젯 JS -->
 <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<!-- CSS로 프로필/작성자/날짜 제거 -->
+<style>
+.twitter-video .twitter-tweet-header,
+.twitter-video .twitter-tweet-footer,
+.twitter-video .twitter-tweet-metadata {
+  display: none !important;
+}
+.twitter-video iframe {
+  width: 100% !important;
+  height: 100% !important;
+}
+</style>
 
 <!-- SNS 링크 -->
 <div class="links">
@@ -252,39 +242,27 @@ header {
 
 <script>
 // 별 생성
-const starContainer = document.querySelector('.star-container');
 const starCount = 250;
+const pageHeight = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
+const pageWidth = Math.max(document.body.scrollWidth,document.documentElement.scrollWidth);
 const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
-const pageWidth = window.innerWidth;
-const pageHeight = window.innerHeight;
 
 for(let i=0;i<starCount;i++){
-  const star = document.createElement('div');
+  let star=document.createElement('div');
   star.className='star';
-  const size = Math.random()*2+1;
-  const radius = Math.random()**0.7 * pageWidth/2;
-  const angle = Math.random()*Math.PI*2;
-  const x = pageWidth/2 + radius*Math.cos(angle);
-  const y = pageHeight/2 + radius*Math.sin(angle);
-  star.style.width = star.style.height = size+'px';
-  star.style.left = x+'px';
-  star.style.top = y+'px';
-  star.style.background = colors[Math.floor(Math.random()*colors.length)];
-  star.style.animation = `twinkle ${Math.random()*3+4}s infinite`;
-  starContainer.appendChild(star);
+  let size=Math.random()*2+1;
+  let radius = Math.random()**0.7 * pageWidth/2;
+  let angle = Math.random()*Math.PI*2;
+  let x = pageWidth/2 + radius * Math.cos(angle);
+  let y = pageHeight/2 + radius * Math.sin(angle);
+  star.style.width=star.style.height=size+'px';
+  star.style.top=y+'px';
+  star.style.left=x+'px';
+  star.style.background=colors[Math.floor(Math.random()*colors.length)];
+  let duration = Math.random()*3 + 4;
+  star.style.animation = `twinkle ${duration}s infinite`;
+  document.body.appendChild(star);
 }
-
-// 마우스 패럴랙스 (은하 레이어만)
-document.addEventListener('mousemove', e=>{
-  const x = window.innerWidth/2 - e.clientX;
-  const y = window.innerHeight/2 - e.clientY;
-  document.querySelector('.galaxy-layer.back').style.transform =
-    `translate(${x*0.01}px, ${y*0.01}px) rotate(0deg)`;
-  document.querySelector('.galaxy-layer.middle').style.transform =
-    `translate(${x*0.03}px, ${y*0.03}px) rotate(0deg)`;
-  document.querySelector('.galaxy-layer.front').style.transform =
-    `translate(${x*0.05}px, ${y*0.05}px) rotate(0deg)`;
-});
 </script>
 
 </body>
