@@ -14,6 +14,7 @@ html, body {
   position:relative;
 }
 
+/* 은하 중앙 빛줄기 */
 body::before {
   content:"";
   position:absolute;
@@ -87,14 +88,14 @@ h1 {
   display:block;
 }
 
-/* 카드 */
+/* 카드 공통 */
 .voice-card{
   display:flex;
   max-width:700px;
   min-height:220px;
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
-  margin:30px auto;
+  margin:30px auto; /* 카드 간 간격 */
   flex-wrap:nowrap;
   text-align:left;
 }
@@ -130,23 +131,6 @@ h1 {
   background:linear-gradient(90deg,#101020,#202040);
   transform:scale(1.05);
 }
-
-/* 데모송 카드 */
-<div class="voice-card">
-  <div class="face">
-    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/demo-thumbnail.jpg" alt="UTAUカバー">
-  </div>
-  <div class="info">
-    <div class="title">UTAUカバー</div>
-    <div class="desc">
-      original：Kai様<br>
-      illustration：yoake<br>
-      vocal：沢音オフ<br>
-      tuning･mix：沢多恩
-    </div>
-    <a class="download-btn" href="https://example.com/demo" target="_blank">Listen</a>
-  </div>
-</div>
 
 /* SNS 링크 */
 .links{
@@ -186,12 +170,12 @@ h1 {
 <!-- 사와네 오프 카드 -->
 <div class="voice-card">
   <div class="face">
-    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/sawaneoff.jpg" alt="사와네 오프">
+    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/sawaneoff.jpg" alt="사와네オフ">
   </div>
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파슈様<br>
+      otoing：パシュ様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
@@ -200,16 +184,20 @@ h1 {
   </div>
 </div>
 
-<!-- 데모송 카드 -->
-<div class="voice-card demo-card">
-  <div class="demo-video">
-    <!-- 영상 공간 -->
+<!-- UTAUカバー 카드 (사와네オフ 카드와 동일 스타일) -->
+<div class="voice-card">
+  <div class="face">
+    <img src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/demo-thumbnail.jpg" alt="UTAUカバー">
   </div>
-  <div class="demo-credit">
-    original：Kai様<br>
-    illustration：yoake<br>
-    vocal：沢音オフ<br>
-    tuning･mix：沢多恩
+  <div class="info">
+    <div class="title">UTAUカバー</div>
+    <div class="desc">
+      original：Kai様<br>
+      illustration：yoake<br>
+      vocal：沢音オフ<br>
+      tuning･mix：沢多恩
+    </div>
+    <a class="download-btn" href="https://example.com/demo" target="_blank">Listen</a>
   </div>
 </div>
 
