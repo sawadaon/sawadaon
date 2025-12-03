@@ -40,34 +40,45 @@ body::before {
 header{
   display:flex;
   justify-content:center;
-  align-items:center;
-  gap:60px;
   padding:40px 20px 20px;
-  flex-wrap:nowrap;
   z-index:2;
   position:relative;
 }
 
-/* 왼쪽 글 */
-.intro{
+/* 왼쪽 글 + 이름 옆 사진 */
+.intro {
   max-width:400px;
   text-align:left;
 }
-.intro h1{
+.intro-header {
+  display:flex;
+  align-items:center;
+  gap:20px;
+}
+.intro-header h1 {
   font-size:2.5em;
-  margin:0 0 10px 0;
+  margin:0;
   font-weight:700;
   letter-spacing:2px;
 }
-
-/* 오른쪽 사진 박스 */
-.profile-pic{
-  width:180px; height:180px;
-  background:rgba(255,255,255,0.05);
+.profile-inline {
+  width:100px;
+  height:100px;
   border:2px solid #fff;
+  background:rgba(255,255,255,0.05);
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
+}
+.profile-inline img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.intro-text {
+  margin-top:10px;
+  font-size:1em;
+  color:#fff;
 }
 
 /* 카드 */
@@ -77,7 +88,7 @@ header{
   min-height:220px;
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
-  margin:30px auto; /* 기존보다 살짝 넓힘 */
+  margin:30px auto;
   flex-wrap:nowrap;
   text-align:left;
 }
@@ -145,14 +156,16 @@ header{
 
 <header>
   <div class="intro">
-    <h1>沢多恩</h1>
-    初めまして、沢多恩（さわだおん）と申します。<br>
-    好きな曲を歌ったり演奏したり調声したりしてます。
-  </div>
-  <div class="profile-pic">
-    <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
-
-  </div>
+    <div class="intro-header">
+      <h1>沢多恩</h1>
+      <div class="profile-inline">
+        <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
+      </div>
+    </div>
+    <div class="intro-text">
+      初めまして、沢多恩（さわだおん）と申します。<br>
+      好きな曲を歌ったり演奏したり調声したりしてます。
+    </div>
   </div>
 </header>
 
