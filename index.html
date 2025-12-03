@@ -237,6 +237,28 @@ for(let i=0;i<starCount;i++){
   star.style.animation = `twinkle ${duration}s infinite`;
   document.body.appendChild(star);
 }
+
+const starCount = 500;
+const cx = window.innerWidth/2;
+const cy = window.innerHeight/2;
+for(let i=0;i<starCount;i++){
+  let star=document.createElement('div');
+  star.className='star';
+  let theta = i * 0.3;       // 각도 증가
+  let r = 5 + 3*theta;       // 나선 반경
+  let x = cx + r * Math.cos(theta);
+  let y = cy + r * Math.sin(theta);
+  let size = Math.random()*2+1;
+  star.style.width = star.style.height = size+'px';
+  star.style.top = y+'px';
+  star.style.left = x+'px';
+  star.style.background = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'][Math.floor(Math.random()*4)];
+  star.style.position = 'absolute';
+  star.style.borderRadius = '50%';
+  star.style.animation = `twinkle ${Math.random()*3+4}s infinite`;
+  document.body.appendChild(star);
+}
+
 </script>
 
 </body>
