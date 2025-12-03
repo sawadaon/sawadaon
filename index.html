@@ -2,19 +2,20 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>沢多恩</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 <style>
-html, body { width:100%; height:100%; margin:0; padding:0; font-family:'Noto Sans JP',sans-serif; overflow-x:hidden; }
-body {
+html, body {
+  width:100%; height:100%; margin:0; padding:0;
+  font-family:'Noto Sans JP',sans-serif;
+  overflow-x:hidden;
   background: radial-gradient(ellipse at center, #03030a 0%, #000010 90%);
   color:#fff;
   position:relative;
 }
 
 /* 은하 중앙 빛줄기 */
-body::before{
+body::before {
   content:"";
   position:absolute;
   top:0; left:50%;
@@ -38,13 +39,13 @@ body::before{
 /* 헤더 */
 header{
   display:flex;
-  justify-content:center; /* 화면 중앙 */
+  justify-content:center;
   align-items:center;
-  gap:40px;
+  gap:60px;
   padding:40px 20px 20px;
-  position:relative;
+  flex-wrap:nowrap;
   z-index:2;
-  flex-wrap:wrap;
+  position:relative;
 }
 
 /* 왼쪽 글 */
@@ -59,10 +60,9 @@ header{
   letter-spacing:2px;
 }
 
-/* 오른쪽 사진 박스 (비워둠) */
+/* 오른쪽 사진 박스 */
 .profile-pic{
-  width:180px;
-  height:180px;
+  width:180px; height:180px;
   background:rgba(255,255,255,0.05);
   border:2px solid #fff;
   display:flex;
@@ -77,8 +77,8 @@ header{
   min-height:220px;
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
-  margin:20px auto;
-  flex-wrap:wrap;
+  margin:30px auto; /* 기존보다 살짝 넓힘 */
+  flex-wrap:nowrap;
   text-align:left;
 }
 .face{
@@ -124,7 +124,6 @@ header{
   margin:40px auto;
   display:flex;
   justify-content:center;
-  flex-wrap:wrap;
   gap:30px;
 }
 .link-group{display:flex; flex-direction:column; align-items:center;}
@@ -140,17 +139,6 @@ header{
 }
 .link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
 .link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
-
-/* 반응형 */
-@media (max-width:600px){
-  header{flex-direction:column; gap:20px;}
-  .intro{max-width:90%; text-align:center;}
-  .profile-pic{margin:0 auto;}
-  .voice-card{flex-direction:column; max-width:90%;}
-  .face{width:100%; height:200px; border-right:none; border-bottom:2px solid #fff;}
-  .demo-card{max-width:90%;}
-  .demo-video{height:200px;}
-}
 </style>
 </head>
 <body>
@@ -196,37 +184,6 @@ header{
   </div>
 </div>
 
-<div class="voice-card">
-  <div class="face" style="flex:1.5; min-width:250px; height:250px;">
-    <blockquote class="twitter-video" data-dnt="true" data-theme="dark">
-      <a href="https://x.com/on3ic/status/1972895965796532501">Tweet</a>
-    </blockquote>
-  </div>
-  <div class="info" style="flex:1.2; min-width:200px; padding:15px;">
-    <div class="title">歌ってみた</div>
-    <div class="desc">
-      original：seiza様<br>
-      vocal･mix：沢多恩<br>
-    </div>
-  </div>
-</div>
-
-<!-- 트위터 위젯 JS -->
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-<!-- CSS로 프로필/작성자/날짜 제거 -->
-<style>
-.twitter-video .twitter-tweet-header,
-.twitter-video .twitter-tweet-footer,
-.twitter-video .twitter-tweet-metadata {
-  display: none !important;
-}
-.twitter-video iframe {
-  width: 100% !important;
-  height: 100% !important;
-}
-</style>
-
 <!-- SNS 링크 -->
 <div class="links">
   <div class="link-group">
@@ -242,8 +199,8 @@ header{
 <script>
 // 별 생성
 const starCount = 250;
-const pageHeight = Math.max(document.body.scrollHeight,document.documentElement.scrollHeight);
-const pageWidth = Math.max(document.body.scrollWidth,document.documentElement.scrollWidth);
+const pageHeight = window.innerHeight;
+const pageWidth = window.innerWidth;
 const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
 
 for(let i=0;i<starCount;i++){
