@@ -14,7 +14,7 @@ html, body {
   position:relative;
 }
 
-/*은하*/
+/* 은하 중앙 빛줄기 */
 body::before {
   content:"";
   position:absolute;
@@ -34,6 +34,22 @@ body::before {
 @keyframes twinkle{
   0%,50%,100%{ opacity:0; }
   25%,75%{ opacity:1; }
+}
+
+/* 떨어지는 은하 덩어리 */
+@keyframes galaxyFall {
+  0% { transform: translateY(0); opacity:0; }
+  10% { opacity:0.8; }
+  80% { opacity:0.8; }
+  100% { transform: translateY(100vh); opacity:0; }
+}
+.falling-galaxy {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0) 70%);
+  animation: galaxyFall 15s linear infinite;
 }
 
 /* 헤더: 2행 2열 구조 */
@@ -176,7 +192,7 @@ h1 {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파슈様<br>
+      otoing：パシュ様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
@@ -215,7 +231,7 @@ h1 {
 </div>
 
 <script>
-// 별 생성
+// 기존 별 생성
 const starCount = 250;
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
@@ -238,6 +254,19 @@ for(let i=0;i<starCount;i++){
   document.body.appendChild(star);
 }
 
+// 떨어지는 은하 덩어리 생성
+function createFallingGalaxy(){
+  const galaxy = document.createElement('div');
+  galaxy.className='falling-galaxy';
+  galaxy.style.left = Math.random() * pageWidth + 'px';
+  galaxy.style.top = '-20px';
+  document.body.appendChild(galaxy);
+}
+
+// 5개 정도 3초 간격으로 생성
+for(let i=0;i<5;i++){
+  setTimeout(createFallingGalaxy, i*3000);
+}
 </script>
 
 </body>
