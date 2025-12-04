@@ -14,7 +14,7 @@ html, body {
   position:relative;
 }
 
-/*은하*/
+/* 은하 */
 body::before {
   content:"";
   position:absolute;
@@ -154,10 +154,13 @@ h1 {
 .link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
 .link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
 
-/* 트위터 카드(색 튀지 않게 필터 적용) */
-.twitter-tweet {
-  margin: 30px auto !important;
-  filter: brightness(0.7) saturate(0) contrast(1.1);
+/* 트위터 카드 */
+.twitter-card{
+  max-width:700px;
+  margin:30px auto;
+  padding:15px;
+  border:2px solid #fff;
+  background:rgba(255,255,255,0.05);
 }
 </style>
 </head>
@@ -182,7 +185,7 @@ h1 {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파슈様<br>
+      otoing：파シュ様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
@@ -191,7 +194,7 @@ h1 {
   </div>
 </div>
 
-<!-- UTAUカバー 카드 -->
+<!-- UTAU 카バー 카드 -->
 <div class="voice-card">
   <div class="face">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/off_demo.jpg?raw=true" alt="UTAUカバー">
@@ -208,10 +211,19 @@ h1 {
   </div>
 </div>
 
-<!-- 🔥 트위터 카드(여기에 넣어달라고 한 링크) -->
-<blockquote class="twitter-tweet">
-  <a href="https://x.com/on3ic/status/1994774955687579712"></a>
-</blockquote>
+<!-- 트윗 카드 1 -->
+<div class="twitter-card">
+  <blockquote class="twitter-tweet">
+    <a href="https://x.com/on3ic/status/1972895965796532501?s=61"></a>
+  </blockquote>
+</div>
+
+<!-- 트윗 카드 2 -->
+<div class="twitter-card">
+  <blockquote class="twitter-tweet">
+    <a href="https://x.com/on3ic/status/1982409145329590524"></a>
+  </blockquote>
+</div>
 
 <!-- SNS 링크 -->
 <div class="links">
@@ -225,7 +237,7 @@ h1 {
   </div>
 </div>
 
-<script async src="https://platform.twitter.com/widgets.js"></script>
+<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 
 <script>
 // 별 생성
