@@ -14,7 +14,7 @@ html, body {
   position:relative;
 }
 
-/*은하*/
+/* 은하 효과 */
 body::before {
   content:"";
   position:absolute;
@@ -45,7 +45,6 @@ header {
   padding:40px 20px 20px;
   align-items:start;
   justify-content:center;
-  z-index:2;
   position:relative;
 }
 
@@ -55,23 +54,16 @@ h1 {
   font-size:2.5em;
   font-weight:700;
   letter-spacing:2px;
-  grid-column:1 / 2;
-  grid-row:1 / 2;
-  align-self:end;
 }
 
 /* 자기소개 */
 .intro-text {
-  grid-column:1 / 2;
-  grid-row:2 / 3;
   font-size:1em;
   line-height:1.4em;
 }
 
-/* 사진 */
+/* 프로필 */
 .profile-inline {
-  grid-column:2 / 3;
-  grid-row:1 / 3;
   width:120px;
   height:120px;
   border:2px solid #fff;
@@ -85,10 +77,9 @@ h1 {
   width:100%;
   height:100%;
   object-fit:cover;
-  display:block;
 }
 
-/* 카드 공통 */
+/* 카드 */
 .voice-card{
   display:flex;
   max-width:700px;
@@ -96,24 +87,25 @@ h1 {
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
   margin:30px auto;
-  flex-wrap:nowrap;
-  text-align:left;
 }
+
 .face{
   flex:1;
   min-width:180px;
+  border-right:2px solid #fff;
   display:flex;
   align-items:center;
   justify-content:center;
-  border-right:2px solid #fff;
   overflow:hidden;
 }
-.face img{ width:100%; height:100%; object-fit:cover; display:block; }
-.face video{ width:100%; height:100%; object-fit:cover; display:block; }
+.face img, .face video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 .info{
   flex:2;
-  min-width:300px;
   padding:15px 20px;
   display:flex;
   flex-direction:column;
@@ -121,59 +113,48 @@ h1 {
 }
 .title{ font-weight:700; margin-bottom:5px; font-size:1.2em; }
 .desc{ font-size:0.9em; color:#ccc; margin-bottom:10px; }
-.download-btn{
-  display:inline-block;
-  padding:8px 20px;
-  background:#332E48;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-  transition:all 0.3s ease;
-}
-.download-btn:hover{
-  background:linear-gradient(90deg,#101020,#202040);
-  transform:scale(1.05);
-}
 
-/* SNS 링크 */
+/* SNS */
 .links{
   margin:40px auto;
   display:flex;
   justify-content:center;
   gap:30px;
 }
-.link-group{display:flex; flex-direction:column; align-items:center;}
 .link-btn{
-  display:inline-block;
   padding:10px 25px;
   background:rgba(255,255,255,0.1);
-  color:#fff;
   border:2px solid #fff;
+  color:#fff;
   text-decoration:none;
-  font-weight:700;
-  transition:all 0.3s ease;
+  transition:0.3s;
 }
-.link-btn:hover{background:rgba(255,255,255,0.2);transform:scale(1.05);}
-.link-desc{font-size:0.85em;color:#ccc;margin-top:5px;}
+.link-btn:hover{
+  background:rgba(255,255,255,0.2);
+  transform:scale(1.05);
+}
 </style>
 </head>
+
 <body>
 
 <header>
   <h1>沢多恩</h1>
+
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
+
   <div class="intro-text">
     初めまして、沢多恩（さわだおん）と申します。<br>
     好きな曲を歌ったり演奏したり調声したりしてます。
   </div>
 </header>
 
-<!-- 사와네 오프 카드 -->
+<!-- 사와네 오프 -->
 <div class="voice-card">
   <div class="face">
-    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg" alt="사와네オフ">
+    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
   </div>
   <div class="info">
     <div class="title">沢音オフ</div>
@@ -183,14 +164,13 @@ h1 {
       special thanks：AisE様<br>
       voice provider：沢多恩
     </div>
-    <a class="download-btn" href="#" target="_blank">Download</a>
   </div>
 </div>
 
-<!-- UTAUカバー 카드 -->
+<!-- UTAU COVER -->
 <div class="voice-card">
   <div class="face">
-    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" alt="UTAUカバー">
+    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
   </div>
   <div class="info">
     <div class="title">UTAUカバー</div>
@@ -200,15 +180,14 @@ h1 {
       vocal：沢音オフ<br>
       tuning･mix：沢多恩
     </div>
-    <a class="download-btn" href="#" target="_blank">Listen</a>
   </div>
 </div>
 
-<!-- 歌ってみた 영상 카드 -->
+<!-- 歌ってみた (새 영상) -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/Pl.mp4" type="video/mp4">
+      <source src="https://github.com/sawadaon/sawadaon/blob/main/BzfyFOWZ480h-7C9.mp4?raw=true" type="video/mp4">
     </video>
   </div>
   <div class="info">
@@ -221,11 +200,11 @@ h1 {
   </div>
 </div>
 
-<!-- 調声晒し 영상 카드 -->
+<!-- 調声晒し (새 영상) -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/Pr.mp4" type="video/mp4">
+      <source src="https://github.com/sawadaon/sawadaon/blob/main/vLMTG3vwJXD6ErSB.mp4?raw=true" type="video/mp4">
     </video>
   </div>
   <div class="info">
@@ -239,20 +218,15 @@ h1 {
   </div>
 </div>
 
-<!-- SNS 링크 -->
+<!-- SNS -->
 <div class="links">
-  <div class="link-group">
-    <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-    <div class="link-desc">フル投稿してます</div>
-  </div>
-  <div class="link-group">
-    <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
-    <div class="link-desc">ショートカバー</div>
-  </div>
+  <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
+  <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
 </div>
 
+
 <script>
-// 별 생성
+/* 별 생성 */
 const starCount = 250;
 const pageHeight = window.innerHeight;
 const pageWidth = window.innerWidth;
@@ -262,16 +236,14 @@ for(let i=0;i<starCount;i++){
   let star=document.createElement('div');
   star.className='star';
   let size=Math.random()*2+1;
-  let radius = Math.random()**0.7 * pageWidth/2;
-  let angle = Math.random()*Math.PI*2;
-  let x = pageWidth/2 + radius * Math.cos(angle);
-  let y = pageHeight/2 + radius * Math.sin(angle);
+  let radius=Math.random()**0.7 * pageWidth/2;
+  let angle=Math.random()*Math.PI*2;
+  let x=pageWidth/2 + radius*Math.cos(angle);
+  let y=pageHeight/2 + radius*Math.sin(angle);
   star.style.width=star.style.height=size+'px';
   star.style.top=y+'px';
   star.style.left=x+'px';
   star.style.background=colors[Math.floor(Math.random()*colors.length)];
-  let duration = Math.random()*3 + 4;
-  star.style.animation = `twinkle ${duration}s infinite`;
   document.body.appendChild(star);
 }
 </script>
