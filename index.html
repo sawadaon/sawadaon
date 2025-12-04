@@ -112,22 +112,6 @@ header {
 .title{ font-weight:700; margin-bottom:5px; font-size:1.2em; }
 .desc{ font-size:0.9em; color:#ccc; margin-bottom:10px; }
 
-/* 카드 내부 버튼 */
-.card-btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 20px;
-  background:rgba(255,255,255,0.1);
-  border:2px solid #fff;
-  color:#fff;
-  text-decoration:none;
-  transition:0.3s;
-}
-.card-btn:hover{
-  background:rgba(255,255,255,0.2);
-  transform:scale(1.05);
-}
-
 /* SNS */
 .links{
   margin:40px auto;
@@ -153,6 +137,7 @@ header {
 <body>
 
 <header>
+
   <div class="text-block">
     <h1>沢多恩</h1>
     <div class="intro-text">
@@ -164,9 +149,10 @@ header {
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
+
 </header>
 
-<!-- 사와네 오프 (Download 버튼) -->
+<!-- 사와네 오프 -->
 <div class="voice-card">
   <div class="face">
     <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
@@ -174,16 +160,15 @@ header {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파シュ様<br>
+      otoing：파슈様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
     </div>
-    <a class="card-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg" download>Download</a>
   </div>
 </div>
 
-<!-- UTAU COVER (Listen 버튼) -->
+<!-- UTAU COVER -->
 <div class="voice-card">
   <div class="face">
     <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
@@ -196,11 +181,10 @@ header {
       vocal：沢音オフ<br>
       tuning･mix：沢多恩
     </div>
-    <a class="card-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" target="_blank">Listen</a>
   </div>
 </div>
 
-<!-- 기존 歌ってみた 영상 카드 -->
+<!-- 歌ってみた 영상 카드 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -217,7 +201,7 @@ header {
   </div>
 </div>
 
-<!-- 기존 調声晒し 영상 카드 -->
+<!-- 調声晒し 영상 카드 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -231,41 +215,6 @@ header {
       vsqx：music_is_genre様<br>
       vocal：沢音オフ<br>
       tuning･mix：沢多恩
-    </div>
-  </div>
-</div>
-
-<!-- 새 불러보았다 카드 -->
-<div class="voice-card">
-  <div class="face">
-    <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/%20沢多恩（歌ってみた）🛸.mp4?raw=true" type="video/mp4">
-    </video>
-  </div>
-  <div class="info">
-    <div class="title">歌ってみた</div>
-    <div class="desc">
-      original：DECO*27様<br>
-      ed/mix/ma：Juntae kim様<br>
-      vocal：沢多恩<br><br>
-      本家様の動画をお借りしてます
-    </div>
-  </div>
-</div>
-
-<!-- 새 연주 카드 -->
-<div class="voice-card">
-  <div class="face">
-    <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/3rCx0PTeunx9_72z.mp4?raw=true" type="video/mp4">
-    </video>
-  </div>
-  <div class="info">
-    <div class="title">弾いてみた</div>
-    <div class="desc">
-      original：米津玄師様, 宇多田ヒカル様<br>
-      illust：shiro様<br>
-      violin：沢多恩
     </div>
   </div>
 </div>
