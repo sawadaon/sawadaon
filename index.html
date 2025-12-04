@@ -38,28 +38,13 @@ body::before {
 
 /* 헤더 */
 header {
-  display:grid;
+  display: grid;
   grid-template-columns: auto 120px;
-  grid-template-rows: auto auto;
-  gap:10px 20px;
-  padding:40px 20px 20px;
-  align-items:start;
-  justify-content:center;
-  position:relative;
-}
-
-/* 이름 */
-h1 {
-  margin:0;
-  font-size:2.5em;
-  font-weight:700;
-  letter-spacing:2px;
-}
-
-/* 자기소개 */
-.intro-text {
-  font-size:1em;
-  line-height:1.4em;
+  gap: 20px;
+  padding: 40px 20px 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 /* 프로필 */
@@ -77,6 +62,19 @@ h1 {
   width:100%;
   height:100%;
   object-fit:cover;
+}
+
+/* 이름 + 소개 텍스트 박스 */
+.text-block h1 {
+  margin:0 0 6px 0;
+  font-size:2.5em;
+  font-weight:700;
+  letter-spacing:2px;
+}
+.intro-text {
+  margin: 0;
+  font-size:1em;
+  line-height:1.4em;
 }
 
 /* 카드 */
@@ -139,16 +137,19 @@ h1 {
 <body>
 
 <header>
-  <h1>沢多恩</h1>
+
+  <div class="text-block">
+    <h1>沢多恩</h1>
+    <div class="intro-text">
+      初めまして、沢多恩（さわだおん）と申します。<br>
+      好きな曲を歌ったり演奏したり調声したりしてます。
+    </div>
+  </div>
 
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
 
-  <div class="intro-text">
-    初めまして、沢多恩（さわだおん）と申します。<br>
-    好きな曲を歌ったり演奏したり調声したりしてます。
-  </div>
 </header>
 
 <!-- 사와네 오프 -->
@@ -223,7 +224,6 @@ h1 {
   <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
   <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
 </div>
-
 
 <script>
 /* 별 생성 */
