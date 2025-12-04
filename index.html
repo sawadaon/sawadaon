@@ -90,16 +90,18 @@ header {
 .face{
   flex:1;
   min-width:180px;
+  height:180px;       /* 높이 고정 */
   border-right:2px solid #fff;
   display:flex;
   align-items:center;
   justify-content:center;
   overflow:hidden;
 }
+
 .face img, .face video {
   width:100%;
   height:100%;
-  object-fit:cover;
+  object-fit:contain;  /* cover → contain */
 }
 
 .info{
@@ -150,7 +152,6 @@ header {
 <body>
 
 <header>
-
   <div class="text-block">
     <h1>沢多恩</h1>
     <div class="intro-text">
@@ -162,7 +163,6 @@ header {
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
-
 </header>
 
 <!-- 사와네 오프 -->
@@ -173,12 +173,12 @@ header {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파슈様<br>
+      otoing：파シュ様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
     </div>
-    <a class="download-btn" href="https://example.com/download" target="_blank">Download</a>
+    <a class="download-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg" download>Download</a>
   </div>
 </div>
 
@@ -195,7 +195,7 @@ header {
       vocal：沢音オフ<br>
       tuning･mix：沢多恩
     </div>
-    <a class="download-btn" href="https://example.com/demo" target="_blank">Listen</a>
+    <a class="download-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" target="_blank">Listen</a>
   </div>
 </div>
 
@@ -234,8 +234,7 @@ header {
   </div>
 </div>
 
-
-<!-- ★ 불러보았다 카드 (歌ってみた 2) -->
+<!-- 불러보았다 카드 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -253,11 +252,11 @@ header {
   </div>
 </div>
 
-<!-- ★ 연주해보았다 카드 (弾いてみた) -->
+<!-- 연주해보았다 카드 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/3rCx0PTeunx9_72z.mp4?raw=true" type="video/mp4">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/3rCx0PTeunx9_72z.mp4" type="video/mp4">
     </video>
   </div>
   <div class="info">
