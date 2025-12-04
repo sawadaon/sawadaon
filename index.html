@@ -81,29 +81,30 @@ header {
 .voice-card{
   display:flex;
   max-width:700px;
-  min-height:220px;
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
   margin:30px auto;
 }
 
+/* 영상/이미지 영역 */
 .face{
   flex:1;
   min-width:180px;
-  height:180px;       /* 높이 고정 */
+  height:0;
+  padding-top:56.25%; /* 16:9 비율 */
   border-right:2px solid #fff;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  position:relative;
   overflow:hidden;
 }
-
 .face img, .face video {
+  position:absolute;
+  top:0; left:0;
   width:100%;
   height:100%;
-  object-fit:contain;  /* cover → contain */
+  object-fit:contain;
 }
 
+/* 정보 영역 */
 .info{
   flex:2;
   padding:15px 20px;
@@ -173,7 +174,7 @@ header {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="desc">
-      otoing：파シュ様<br>
+      otoing：파슈様<br>
       standing：シロマル様<br>
       special thanks：AisE様<br>
       voice provider：沢多恩
