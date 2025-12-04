@@ -85,12 +85,11 @@ header {
   border:2px solid #fff;
   background:rgba(255,255,255,0.05);
   margin:30px auto;
+  flex-direction:column;
 }
-
 .face{
-  flex:1;
-  min-width:180px;
-  border-right:2px solid #fff;
+  width:100%;
+  min-height:180px;
   display:flex;
   align-items:center;
   justify-content:center;
@@ -103,7 +102,6 @@ header {
 }
 
 .info{
-  flex:2;
   padding:15px 20px;
   display:flex;
   flex-direction:column;
@@ -111,6 +109,22 @@ header {
 }
 .title{ font-weight:700; margin-bottom:5px; font-size:1.2em; }
 .desc{ font-size:0.9em; color:#ccc; margin-bottom:10px; }
+
+/* 버튼 */
+.card-btn{
+  display:inline-block;
+  margin-top:10px;
+  padding:8px 20px;
+  background:rgba(255,255,255,0.1);
+  border:2px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+.card-btn:hover{
+  background:rgba(255,255,255,0.2);
+  transform:scale(1.05);
+}
 
 /* SNS */
 .links{
@@ -137,7 +151,6 @@ header {
 <body>
 
 <header>
-
   <div class="text-block">
     <h1>沢多恩</h1>
     <div class="intro-text">
@@ -149,10 +162,9 @@ header {
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
-
 </header>
 
-<!-- 사와네 오프 -->
+<!-- 사와네 오프 (다운로드 버튼) -->
 <div class="voice-card">
   <div class="face">
     <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
@@ -165,10 +177,11 @@ header {
       special thanks：AisE様<br>
       voice provider：沢多恩
     </div>
+    <a class="card-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg" download>Download</a>
   </div>
 </div>
 
-<!-- UTAU COVER -->
+<!-- UTAU COVER (Listen 버튼) -->
 <div class="voice-card">
   <div class="face">
     <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
@@ -181,6 +194,7 @@ header {
       vocal：沢音オフ<br>
       tuning･mix：沢多恩
     </div>
+    <a class="card-btn" href="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" target="_blank">Listen</a>
   </div>
 </div>
 
@@ -191,4 +205,11 @@ header {
       <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
     </video>
   </div>
-  <
+  <div class="info">
+    <div class="title">歌ってみた</div>
+    <div class="desc">
+      original：seiza様<br>
+      vocal･mix：沢多恩<br><br>
+      本家様の動画をお借りしてます
+    </div>
+ 
