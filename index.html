@@ -4,10 +4,11 @@
 <meta charset="UTF-8">
 <title>沢多恩</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
 <style>
 html, body {
   width:100%; height:100%; margin:0; padding:0;
-  font-family:'Noto Sans JP',sans-serif;
+  font-family:'Noto Sans JP', sans-serif;
   overflow-x:hidden;
   background: radial-gradient(ellipse at center, #03030a 0%, #000010 90%);
   color:#fff;
@@ -23,17 +24,20 @@ body::before {
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.12), rgba(255,255,255,0) 80%);
   transform: translateX(-50%) rotate(20deg) skewX(-20deg);
   pointer-events:none;
+  z-index:1; /* ★ 별보다 뒤에 */
 }
 
 /* 별 */
-.star{
+.star {
   position:absolute;
   border-radius:50%;
   animation:twinkle linear infinite;
+  z-index:2; /* ★ 은하 효과보다 위 */
 }
-@keyframes twinkle{
-  0%,50%,100%{ opacity:0; }
-  25%,75%{ opacity:1; }
+
+@keyframes twinkle {
+  0%,50%,100% { opacity:0; }
+  25%,75% { opacity:1; }
 }
 
 /* 헤더 */
@@ -64,7 +68,7 @@ header {
   object-fit:cover;
 }
 
-/* 이름 + 소개 텍스트 박스 */
+/* 텍스트 */
 .text-block h1 {
   margin:0 0 6px 0;
   font-size:2.5em;
@@ -72,13 +76,13 @@ header {
   letter-spacing:2px;
 }
 .intro-text {
-  margin: 0;
+  margin:0;
   font-size:1em;
   line-height:1.4em;
 }
 
 /* 카드 */
-.voice-card{
+.voice-card {
   display:flex;
   max-width:700px;
   min-height:220px;
@@ -87,7 +91,7 @@ header {
   margin:30px auto;
 }
 
-.face{
+.face {
   flex:1;
   min-width:180px;
   border-right:2px solid #fff;
@@ -102,16 +106,24 @@ header {
   object-fit:cover;
 }
 
-.info{
+.info {
   flex:2;
   padding:15px 20px;
   display:flex;
   flex-direction:column;
   justify-content:center;
 }
-.title{ font-weight:700; margin-bottom:5px; font-size:1.2em; }
-.desc{ font-size:0.9em; color:#ccc; margin-bottom:10px; }
-.download-btn{
+.title {
+  font-weight:700;
+  margin-bottom:5px;
+  font-size:1.2em;
+}
+.desc {
+  font-size:0.9em;
+  color:#ccc;
+  margin-bottom:10px;
+}
+.download-btn {
   display:inline-block;
   padding:8px 20px;
   background:#332E48;
@@ -120,19 +132,19 @@ header {
   font-weight:700;
   transition:all 0.3s ease;
 }
-.download-btn:hover{
+.download-btn:hover {
   background:linear-gradient(90deg,#101020,#202040);
   transform:scale(1.05);
 }
 
 /* SNS */
-.links{
+.links {
   margin:40px auto;
   display:flex;
   justify-content:center;
   gap:30px;
 }
-.link-btn{
+.link-btn {
   padding:10px 25px;
   background:rgba(255,255,255,0.1);
   border:2px solid #fff;
@@ -140,26 +152,25 @@ header {
   text-decoration:none;
   transition:0.3s;
 }
-.link-btn:hover{
+.link-btn:hover {
   background:rgba(255,255,255,0.2);
   transform:scale(1.05);
 }
 
+/* footer */
 .footer {
-  text-align: center;
-  padding: 30px 0 40px;
-  color: #ccc;
-  font-size: 0.85em;
-  opacity: 0.8;
+  text-align:center;
+  padding:30px 0 40px;
+  color:#ccc;
+  font-size:0.85em;
+  opacity:0.8;
 }
-
 </style>
 </head>
 
 <body>
 
 <header>
-
   <div class="text-block">
     <h1>沢多恩</h1>
     <div class="intro-text">
@@ -171,7 +182,6 @@ header {
   <div class="profile-inline">
     <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
   </div>
-
 </header>
 
 <!-- 사와네 오프 -->
@@ -208,7 +218,7 @@ header {
   </div>
 </div>
 
-<!-- 調声晒し 영상 카드 -->
+<!-- 調声晒し 영상 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -226,7 +236,7 @@ header {
   </div>
 </div>
 
-<!-- 歌ってみた 영상 카드 -->
+<!-- 歌ってみた -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -243,15 +253,13 @@ header {
   </div>
 </div>
 
-
-<!-- 불러보았다 카드 -->
+<!-- 불러보았다 -->
 <div class="voice-card">
   <div class="face">
-  <video controls preload="metadata">
-  <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
-</video>
+    <video controls preload="metadata">
+      <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
+    </video>
   </div>
-
   <div class="info">
     <div class="title">歌ってみた</div>
     <div class="desc">
@@ -263,7 +271,7 @@ header {
   </div>
 </div>
 
-<!-- 연주해보았다 카드 -->
+<!-- 연주해보았다 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -280,49 +288,40 @@ header {
   </div>
 </div>
 
-<!-- SNS 링크 -->
+<!-- SNS -->
 <div class="links">
-
-  <div class="link-group">
-    <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-  </div>
-
-  <div class="link-group">
-    <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
-  </div>
-
+  <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
+  <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
 </div>
 
-</script>
 <footer class="footer">
- sawadaon3@gmail.com
+  sawadaon3@gmail.com
 </footer>
 
-
 <script>
-/* 별 생성 */
+/* 별 생성 — 페이지 전체 높이에 맞게 */
 const starCount = 250;
-const pageHeight = window.innerHeight;
-const pageWidth = window.innerWidth;
+const pageHeight = document.body.scrollHeight;
+const pageWidth = document.body.scrollWidth;
 const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
 
-for(let i=0;i<starCount;i++){
-  let star=document.createElement('div');
-  star.className='star';
-  let size=Math.random()*2+1;
-  let radius=Math.random()**0.7 * pageWidth/2;
-  let angle=Math.random()*Math.PI*2;
-  let x=pageWidth/2 + radius*Math.cos(angle);
-  let y=pageHeight/2 + radius*Math.sin(angle);
-  star.style.width=star.style.height=size+'px';
-  star.style.top=y+'px';
-  star.style.left=x+'px';
-  star.style.background=colors[Math.floor(Math.random()*colors.length)];
+for(let i = 0; i < starCount; i++){
+  let star = document.createElement('div');
+  star.className = 'star';
+
+  let size = Math.random()*2 + 1;
+  let x = Math.random() * pageWidth;
+  let y = Math.random() * pageHeight;
+
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = x + 'px';
+  star.style.top = y + 'px';
+  star.style.background = colors[Math.floor(Math.random()*colors.length)];
+
   document.body.appendChild(star);
 }
-
-</body>
-</html>
+</script>
 
 </body>
 </html>
