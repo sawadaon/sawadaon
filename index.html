@@ -27,18 +27,18 @@ body::before {
   z-index:1;
 }
 
-/* 별 */
+/* ★ 별 (깜빡임 없음 / 1회만 페이드인) */
 .star {
   position:absolute;
   border-radius:50%;
+  opacity:0;
   z-index:2;
-  opacity:0; /* 초기 opacity 지정 */
 }
 
-@keyframes starTwinkle {
-  0%   { opacity: var(--min-opacity); }
-  50%  { opacity: var(--max-opacity); }
-  100% { opacity: var(--min-opacity); }
+/* 등장 애니메이션 */
+@keyframes starFadeIn {
+  0%   { opacity:0; }
+  100% { opacity:1; }
 }
 
 /* 헤더 */
@@ -52,6 +52,7 @@ header {
   position: relative;
 }
 
+/* 프로필 */
 .profile-inline {
   width:120px;
   height:120px;
@@ -218,7 +219,7 @@ header {
   </div>
 </div>
 
-<!-- 調声晒し -->
+<!-- 調声晒し 영상 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -282,7 +283,7 @@ header {
 </footer>
 
 <script>
-/* 별 생성 */
+/* 별 생성 — 페이지 전체 높이에 맞게 */
 const starCount = 250;
 const pageHeight = document.body.scrollHeight;
 const pageWidth = document.body.scrollWidth;
@@ -296,11 +297,8 @@ for (let i = 0; i < starCount; i++) {
   let x = Math.random() * pageWidth;
   let y = Math.random() * pageHeight;
 
-  let minOpacity = (Math.random() * 0.3 + 0.1).toFixed(2);
-  let maxOpacity = (Math.random() * 0.5 + 0.5).toFixed(2);
-
-  let duration = (Math.random() * 5 + 4).toFixed(2);
-  let delay = (Math.random() * 5).toFixed(2);
+  // 랜덤 딜레이 (등장 시간 차이)
+  let delay = (Math.random() * 4).toFixed(2); // 0~4초
 
   star.style.width = size + 'px';
   star.style.height = size + 'px';
@@ -308,13 +306,8 @@ for (let i = 0; i < starCount; i++) {
   star.style.top = y + 'px';
   star.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-  star.style.setProperty('--min-opacity', minOpacity);
-  star.style.setProperty('--max-opacity', maxOpacity);
-
-  /* ★★ 초기 opacity를 minOpacity로 즉시 적용 */
-  star.style.opacity = minOpacity;
-
-  star.style.animation = `starTwinkle ${duration}s ease-in-out ${delay}s infinite`;
+  // ⭐ 깜빡임 없음 — 1회 페이드인만 적용
+  star.style.animation = `starFadeIn 2s ease-out ${delay}s forwards`;
 
   document.body.appendChild(star);
 }
