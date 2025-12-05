@@ -24,7 +24,7 @@ body::before {
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.12), rgba(255,255,255,0) 80%);
   transform: translateX(-50%) rotate(20deg) skewX(-20deg);
   pointer-events:none;
-  z-index:1; /* ★ 별보다 뒤에 */
+  z-index:1;
 }
 
 /* 별 */
@@ -32,6 +32,7 @@ body::before {
   position:absolute;
   border-radius:50%;
   z-index:2;
+  opacity:0; /* 초기 opacity 지정 */
 }
 
 @keyframes starTwinkle {
@@ -51,7 +52,6 @@ header {
   position: relative;
 }
 
-/* 프로필 */
 .profile-inline {
   width:120px;
   height:120px;
@@ -218,7 +218,7 @@ header {
   </div>
 </div>
 
-<!-- 調声晒し 영상 -->
+<!-- 調声晒し -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -282,7 +282,7 @@ header {
 </footer>
 
 <script>
-/* 별 생성 — 페이지 전체 높이에 맞게 */
+/* 별 생성 */
 const starCount = 250;
 const pageHeight = document.body.scrollHeight;
 const pageWidth = document.body.scrollWidth;
@@ -296,15 +296,11 @@ for (let i = 0; i < starCount; i++) {
   let x = Math.random() * pageWidth;
   let y = Math.random() * pageHeight;
 
-  // 랜덤 밝기 범위
-  let minOpacity = (Math.random() * 0.3 + 0.1).toFixed(2);  // 0.1 ~ 0.4
-  let maxOpacity = (Math.random() * 0.5 + 0.5).toFixed(2);  // 0.5 ~ 1.0
+  let minOpacity = (Math.random() * 0.3 + 0.1).toFixed(2);
+  let maxOpacity = (Math.random() * 0.5 + 0.5).toFixed(2);
 
-  // 랜덤 속도 (느리게)
-  let duration = (Math.random() * 5 + 4).toFixed(2); // 4~9초
-
-  // 랜덤 시작 딜레이
-  let delay = (Math.random() * 5).toFixed(2); // 0~5초
+  let duration = (Math.random() * 5 + 4).toFixed(2);
+  let delay = (Math.random() * 5).toFixed(2);
 
   star.style.width = size + 'px';
   star.style.height = size + 'px';
@@ -314,6 +310,9 @@ for (let i = 0; i < starCount; i++) {
 
   star.style.setProperty('--min-opacity', minOpacity);
   star.style.setProperty('--max-opacity', maxOpacity);
+
+  /* ★★ 초기 opacity를 minOpacity로 즉시 적용 */
+  star.style.opacity = minOpacity;
 
   star.style.animation = `starTwinkle ${duration}s ease-in-out ${delay}s infinite`;
 
