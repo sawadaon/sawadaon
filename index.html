@@ -27,48 +27,19 @@ body::before {
   z-index:1;
 }
 
-/* ⭐ 자연스러운 별 */
+/* ⭐ 별 – 무한 깜빡임 버전 */
 .star {
   position:absolute;
   border-radius:50%;
   opacity:0;
+  animation: twinkle 1.4s ease-in-out infinite;
   z-index:2;
-  animation: twinkle 1.6s ease-in-out forwards;
 }
 
 @keyframes twinkle {
-  0%   { opacity:0; transform:scale(0.6); }
-  20%  { opacity:1; transform:scale(1); }
-  80%  { opacity:1; transform:scale(1); }
-  100% { opacity:0; transform:scale(0.6); }
-}
-
-/* ⭐ 유성 */
-.comet {
-  position:absolute;
-  width:3px;
-  height:3px;
-  border-radius:50%;
-  background:white;
-  filter:blur(1px);
-  opacity:0.8;
-  box-shadow:0 0 10px 4px white;
-  animation: cometFly 1s linear forwards;
-  z-index:2;
-}
-
-@keyframes cometFly {
-  0% {
-    transform:translate(0, 0) scale(1);
-    opacity:1;
-  }
-  70% {
-    opacity:1;
-  }
-  100% {
-    transform:translate(-400px, 200px) scale(0.3);
-    opacity:0;
-  }
+  0%   { opacity:0; transform:scale(0.7); }
+  50%  { opacity:1; transform:scale(1); }
+  100% { opacity:0; transform:scale(0.7); }
 }
 
 /* 헤더 */
@@ -82,6 +53,7 @@ header {
   position: relative;
 }
 
+/* 프로필 */
 .profile-inline {
   width:120px;
   height:120px;
@@ -98,6 +70,7 @@ header {
   object-fit:cover;
 }
 
+/* 텍스트 */
 .text-block h1 {
   margin:0 0 6px 0;
   font-size:2.5em;
@@ -168,7 +141,7 @@ header {
 
 /* SNS */
 .links {
-  margin:20px auto;
+  margin:40px auto;
   display:flex;
   justify-content:center;
   gap:30px;
@@ -186,9 +159,10 @@ header {
   transform:scale(1.05);
 }
 
+/* footer */
 .footer {
   text-align:center;
-  padding:15px 0 40px;
+  padding:30px 0 40px;
   color:#ccc;
   font-size:0.85em;
   opacity:0.8;
@@ -246,7 +220,7 @@ header {
   </div>
 </div>
 
-<!-- 조성晒し -->
+<!-- 조성 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -299,6 +273,23 @@ header {
   </div>
 </div>
 
+<!-- 연주 -->
+<div class="voice-card">
+  <div class="face">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/3rCx0PTeunx9_72z.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">弾いてみた</div>
+    <div class="desc">
+      original：米津玄師様, 宇多田ヒカル様<br>
+      illust：shiro様<br>
+      violin：沢多恩
+    </div>
+  </div>
+</div>
+
 <!-- SNS -->
 <div class="links">
   <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
@@ -306,57 +297,32 @@ header {
 </div>
 
 <footer class="footer">
-  contact / sawadaon3@gmail.com<br>
-  © 2025 sawada on
+  sawadaon3@gmail.com
 </footer>
 
 <script>
-/* --------------------- 별 --------------------- */
-function createStar() {
-  const star = document.createElement("div");
-  star.className = "star";
+/* ⭐ 페이지 전체 높이에 맞춰 별 생성 */
+const starCount = 250;
+const pageHeight = document.body.scrollHeight;
+const pageWidth = document.body.scrollWidth;
+const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
 
-  star.style.left = Math.random() * window.innerWidth + "px";
-  star.style.top  = Math.random() * (document.body.scrollHeight) + "px";
+for(let i = 0; i < starCount; i++){
+  let star = document.createElement('div');
+  star.className = 'star';
 
-  const size = Math.random()*2 + 1;
-  star.style.width = size + "px";
-  star.style.height = size + "px";
+  let size = Math.random()*2 + 1;
+  let x = Math.random() * pageWidth;
+  let y = Math.random() * pageHeight;
 
-  const colors = ["#fff","#e8f4ff","#ffe9cc"];
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = x + 'px';
+  star.style.top = y + 'px';
   star.style.background = colors[Math.floor(Math.random()*colors.length)];
 
   document.body.appendChild(star);
-
-  setTimeout(() => star.remove(), 1600);
 }
-
-function starLoop() {
-  createStar();
-  const delay = Math.random() * 800 + 200; // 0.2~1초
-  setTimeout(starLoop, delay);
-}
-starLoop();
-
-/* --------------------- 유성 --------------------- */
-function createComet() {
-  const comet = document.createElement("div");
-  comet.className = "comet";
-
-  comet.style.left = (window.innerWidth * 0.7 + Math.random()*200) + "px";
-  comet.style.top  = (window.innerHeight * 0.1 + Math.random()*150) + "px";
-
-  document.body.appendChild(comet);
-
-  setTimeout(() => comet.remove(), 1200);
-}
-
-function cometLoop() {
-  createComet();
-  const delay = Math.random() * 7000 + 5000; // 5~12초 랜덤
-  setTimeout(cometLoop, delay);
-}
-cometLoop();
 </script>
 
 </body>
