@@ -27,19 +27,19 @@ body::before {
   z-index:1;
 }
 
-/* ⭐ 별 – 무한 깜빡임 버전 */
+/* ★★★ 별 — 사라지지 않고 계속 반짝이도록 수정 ★★★ */
 .star {
   position:absolute;
   border-radius:50%;
-  opacity:0;
-  animation: twinkle 1.4s ease-in-out infinite;
+  animation:twinkle 2.4s ease-in-out infinite;
   z-index:2;
+  opacity:0.8;
 }
 
 @keyframes twinkle {
-  0%   { opacity:0; transform:scale(0.7); }
-  50%  { opacity:1; transform:scale(1); }
-  100% { opacity:0; transform:scale(0.7); }
+  0%   { opacity:0.1; transform:scale(0.9); }
+  50%  { opacity:1;   transform:scale(1); }
+  100% { opacity:0.1; transform:scale(0.9); }
 }
 
 /* 헤더 */
@@ -220,7 +220,7 @@ header {
   </div>
 </div>
 
-<!-- 조성 -->
+<!-- 調声晒し 영상 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -273,7 +273,7 @@ header {
   </div>
 </div>
 
-<!-- 연주 -->
+<!-- 연주해보았다 -->
 <div class="voice-card">
   <div class="face">
     <video controls preload="metadata">
@@ -301,7 +301,7 @@ header {
 </footer>
 
 <script>
-/* ⭐ 페이지 전체 높이에 맞춰 별 생성 */
+/* ★★★ 별 생성 — 랜덤 딜레이로 자연스럽게 ★★★ */
 const starCount = 250;
 const pageHeight = document.body.scrollHeight;
 const pageWidth = document.body.scrollWidth;
@@ -320,6 +320,9 @@ for(let i = 0; i < starCount; i++){
   star.style.left = x + 'px';
   star.style.top = y + 'px';
   star.style.background = colors[Math.floor(Math.random()*colors.length)];
+
+  /* 🌟 반짝임 딜레이 랜덤 (별이 한꺼번에 사라지지 않게 함) */
+  star.style.animationDelay = (Math.random() * 2) + 's';
 
   document.body.appendChild(star);
 }
