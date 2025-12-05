@@ -24,7 +24,7 @@ body::before {
   background: radial-gradient(ellipse at center, rgba(255,255,255,0.12), rgba(255,255,255,0) 80%);
   transform: translateX(-50%) rotate(20deg) skewX(-20deg);
   pointer-events:none;
-  z-index:1; /* ★ 별보다 뒤에 */
+  z-index:1;
 }
 
 /* 별 */
@@ -32,12 +32,14 @@ body::before {
   position:absolute;
   border-radius:50%;
   animation:twinkle linear infinite;
-  z-index:2; /* ★ 은하 효과보다 위 */
+  z-index:2;
 }
 
+/* ⭐ 자연스러운 깜빡임 */
 @keyframes twinkle {
-  0%,50%,100% { opacity:0; }
-  25%,75% { opacity:1; }
+  0% { opacity:0.2; }
+  50% { opacity:1; }
+  100% { opacity:0.2; }
 }
 
 /* 헤더 */
@@ -51,7 +53,6 @@ header {
   position: relative;
 }
 
-/* 프로필 */
 .profile-inline {
   width:120px;
   height:120px;
@@ -68,7 +69,6 @@ header {
   object-fit:cover;
 }
 
-/* 텍스트 */
 .text-block h1 {
   margin:0 0 6px 0;
   font-size:2.5em;
@@ -157,7 +157,6 @@ header {
   transform:scale(1.05);
 }
 
-/* footer */
 .footer {
   text-align:center;
   padding:15px 0 40px;
@@ -271,8 +270,6 @@ header {
   </div>
 </div>
 
-
-
 <!-- SNS -->
 <div class="links">
   <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
@@ -280,13 +277,12 @@ header {
 </div>
 
 <footer class="footer">
-  contact / sawadaon3@gmail.com
-  </div>
+  contact / sawadaon3@gmail.com<br>
   © 2025 sawada on
 </footer>
 
 <script>
-/* 별 생성 — 페이지 전체 높이에 맞게 */
+/* 별 생성 */
 const starCount = 250;
 const pageHeight = document.body.scrollHeight;
 const pageWidth = document.body.scrollWidth;
@@ -305,6 +301,10 @@ for(let i = 0; i < starCount; i++){
   star.style.left = x + 'px';
   star.style.top = y + 'px';
   star.style.background = colors[Math.floor(Math.random()*colors.length)];
+
+  /* ⭐ 각각 다른 깜빡임 속도와 딜레이 */
+  star.style.animationDuration = (Math.random() * 3 + 2) + 's';
+  star.style.animationDelay = Math.random() * 2 + 's';
 
   document.body.appendChild(star);
 }
