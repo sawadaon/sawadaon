@@ -31,13 +31,13 @@ body::before {
 .star {
   position:absolute;
   border-radius:50%;
-  animation:twinkle linear infinite;
-  z-index:2; /* ★ 은하 효과보다 위 */
+  z-index:2;
 }
 
-@keyframes twinkle {
-  0%,50%,100% { opacity:0; }
-  25%,75% { opacity:1; }
+@keyframes starTwinkle {
+  0%   { opacity: var(--min-opacity); }
+  50%  { opacity: var(--max-opacity); }
+  100% { opacity: var(--min-opacity); }
 }
 
 /* 헤더 */
@@ -271,23 +271,6 @@ header {
   </div>
 </div>
 
-<!-- 연주해보았다 -->
-<div class="voice-card">
-  <div class="face">
-    <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/3rCx0PTeunx9_72z.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="info">
-    <div class="title">弾いてみた</div>
-    <div class="desc">
-      original：米津玄師様, 宇多田ヒカル様<br>
-      illust：shiro様<br>
-      violin：沢多恩
-    </div>
-  </div>
-</div>
-
 <!-- SNS -->
 <div class="links">
   <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
@@ -305,19 +288,34 @@ const pageHeight = document.body.scrollHeight;
 const pageWidth = document.body.scrollWidth;
 const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
 
-for(let i = 0; i < starCount; i++){
+for (let i = 0; i < starCount; i++) {
   let star = document.createElement('div');
   star.className = 'star';
 
-  let size = Math.random()*2 + 1;
+  let size = Math.random() * 2 + 1;
   let x = Math.random() * pageWidth;
   let y = Math.random() * pageHeight;
+
+  // 랜덤 밝기 범위
+  let minOpacity = (Math.random() * 0.3 + 0.1).toFixed(2);  // 0.1 ~ 0.4
+  let maxOpacity = (Math.random() * 0.5 + 0.5).toFixed(2);  // 0.5 ~ 1.0
+
+  // 랜덤 속도 (느리게)
+  let duration = (Math.random() * 5 + 4).toFixed(2); // 4~9초
+
+  // 랜덤 시작 딜레이
+  let delay = (Math.random() * 5).toFixed(2); // 0~5초
 
   star.style.width = size + 'px';
   star.style.height = size + 'px';
   star.style.left = x + 'px';
   star.style.top = y + 'px';
-  star.style.background = colors[Math.floor(Math.random()*colors.length)];
+  star.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+  star.style.setProperty('--min-opacity', minOpacity);
+  star.style.setProperty('--max-opacity', maxOpacity);
+
+  star.style.animation = `starTwinkle ${duration}s ease-in-out ${delay}s infinite`;
 
   document.body.appendChild(star);
 }
