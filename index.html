@@ -7,45 +7,318 @@
 
 <style>
 html, body {
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  font-family: 'Noto Sans JP', sans-serif;
-  background: black;
+  width:100%; height:100%; margin:0; padding:0;
+  font-family:'Noto Sans JP', sans-serif;
+  overflow-x:hidden;
+  background: radial-gradient(ellipse at center, #03030a 0%, #000010 90%);
+  color:#fff;
+  position:relative;
 }
 
-/* ⭐ 별 스타일 */
+/* 은하 효과 */
+body::before {
+  content:"";
+  position:absolute;
+  top:0; left:50%;
+  width:60px; height:100%;
+  background: radial-gradient(ellipse at center, rgba(255,255,255,0.12), rgba(255,255,255,0) 80%);
+  transform: translateX(-50%) rotate(20deg) skewX(-20deg);
+  pointer-events:none;
+  z-index:1; /* ★ 별보다 뒤에 */
+}
+
+/* 별 */
 .star {
-  position: absolute;
-  width: 2px;
-  height: 2px;
-  background: white;
-  border-radius: 50%;
-  opacity: 0.8;
-  animation: twinkle 2.5s infinite ease-in-out alternate;
+  position:absolute;
+  border-radius:50%;
+  animation:twinkle linear infinite;
+  z-index:2; /* ★ 은하 효과보다 위 */
 }
 
-/* ⭐ 자연스러운 반짝임 */
 @keyframes twinkle {
-  0% { opacity: 0.2; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.4); }
-  100% { opacity: 0.2; transform: scale(1); }
+  0%,50%,100% { opacity:0; }
+  25%,75% { opacity:1; }
 }
 
+/* 헤더 */
+header {
+  display: grid;
+  grid-template-columns: auto 120px;
+  gap: 20px;
+  padding: 40px 20px 20px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+/* 프로필 */
+.profile-inline {
+  width:120px;
+  height:120px;
+  border:2px solid #fff;
+  background:rgba(255,255,255,0.05);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+.profile-inline img {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* 텍스트 */
+.text-block h1 {
+  margin:0 0 6px 0;
+  font-size:2.5em;
+  font-weight:700;
+  letter-spacing:2px;
+}
+.intro-text {
+  margin:0;
+  font-size:1em;
+  line-height:1.4em;
+}
+
+/* 카드 */
+.voice-card {
+  display:flex;
+  max-width:700px;
+  min-height:220px;
+  border:2px solid #fff;
+  background:rgba(255,255,255,0.05);
+  margin:30px auto;
+}
+
+.face {
+  flex:1;
+  min-width:180px;
+  border-right:2px solid #fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  overflow:hidden;
+}
+.face img, .face video {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+.info {
+  flex:2;
+  padding:15px 20px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+.title {
+  font-weight:700;
+  margin-bottom:5px;
+  font-size:1.2em;
+}
+.desc {
+  font-size:0.9em;
+  color:#ccc;
+  margin-bottom:10px;
+}
+.download-btn {
+  display:inline-block;
+  padding:8px 20px;
+  background:#332E48;
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
+  transition:all 0.3s ease;
+}
+.download-btn:hover {
+  background:linear-gradient(90deg,#101020,#202040);
+  transform:scale(1.05);
+}
+
+/* SNS */
+.links {
+  margin:40px auto;
+  display:flex;
+  justify-content:center;
+  gap:30px;
+}
+.link-btn {
+  padding:10px 25px;
+  background:rgba(255,255,255,0.1);
+  border:2px solid #fff;
+  color:#fff;
+  text-decoration:none;
+  transition:0.3s;
+}
+.link-btn:hover {
+  background:rgba(255,255,255,0.2);
+  transform:scale(1.05);
+}
+
+/* footer */
+.footer {
+  text-align:center;
+  padding:30px 0 40px;
+  color:#ccc;
+  font-size:0.85em;
+  opacity:0.8;
+}
 </style>
 </head>
 
 <body>
 
+<header>
+  <div class="text-block">
+    <h1>沢多恩</h1>
+    <div class="intro-text">
+      初めまして、沢多恩（さわだおん）と申します。<br>
+      好きな曲を歌ったり演奏したり調声したりしてます。
+    </div>
+  </div>
+
+  <div class="profile-inline">
+    <img src="https://github.com/sawadaon/sawadaon/blob/main/sawadaon.png?raw=true" alt="Sawada On">
+  </div>
+</header>
+
+<!-- 사와네 오프 -->
+<div class="voice-card">
+  <div class="face">
+    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
+  </div>
+  <div class="info">
+    <div class="title">沢音オフ</div>
+    <div class="desc">
+      otoing：파슈様<br>
+      standing：シロマル様<br>
+      special thanks：AisE様<br>
+      voice provider：沢多恩
+    </div>
+    <a class="download-btn" href="https://example.com/download" target="_blank">Download</a>
+  </div>
+</div>
+
+<!-- UTAU COVER -->
+<div class="voice-card">
+  <div class="face">
+    <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
+  </div>
+  <div class="info">
+    <div class="title">UTAUカバー</div>
+    <div class="desc">
+      original：Kai様<br>
+      illustration：yoake様<br>
+      vocal：沢音オフ<br>
+      tuning･mix：沢多恩
+    </div>
+    <a class="download-btn" href="https://example.com/demo" target="_blank">Listen</a>
+  </div>
+</div>
+
+<!-- 調声晒し 영상 -->
+<div class="voice-card">
+  <div class="face">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">調声晒し</div>
+    <div class="desc">
+      original：大沼パセリ様<br>
+      vsqx：music_is_genre様<br>
+      vocal：沢音オフ<br>
+      tuning･mix：沢多恩
+    </div>
+  </div>
+</div>
+
+<!-- 歌ってみた -->
+<div class="voice-card">
+  <div class="face">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">歌ってみた</div>
+    <div class="desc">
+      original：seiza様<br>
+      vocal･mix：沢多恩<br><br>
+      本家様の動画をお借りしてます
+    </div>
+  </div>
+</div>
+
+<!-- 불러보았다 -->
+<div class="voice-card">
+  <div class="face">
+    <video controls preload="metadata">
+      <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">歌ってみた</div>
+    <div class="desc">
+      original：DECO*27様<br>
+      ed/mix/ma：Juntae kim様<br>
+      vocal：沢多恩<br><br>
+      本家様の動画をお借りしてます
+    </div>
+  </div>
+</div>
+
+<!-- 연주해보았다 -->
+<div class="voice-card">
+  <div class="face">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/3rCx0PTeunx9_72z.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">弾いてみた</div>
+    <div class="desc">
+      original：米津玄師様, 宇多田ヒカル様<br>
+      illust：shiro様<br>
+      violin：沢多恩
+    </div>
+  </div>
+</div>
+
+<!-- SNS -->
+<div class="links">
+  <a class="link-btn" href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
+  <a class="link-btn" href="https://x.com/on3ic" target="_blank">X / Twitter</a>
+</div>
+
+<footer class="footer">
+  sawadaon3@gmail.com
+</footer>
+
 <script>
-/* ⭐ 네가 원래 쓰던 방식: 랜덤 위치에 별 200개 생성 */
-for (let i = 0; i < 200; i++) {
-  const star = document.createElement("div");
-  star.className = "star";
-  star.style.left = Math.random() * 100 + "vw";
-  star.style.top = Math.random() * 100 + "vh";
+/* 별 생성 — 페이지 전체 높이에 맞게 */
+const starCount = 250;
+const pageHeight = document.body.scrollHeight;
+const pageWidth = document.body.scrollWidth;
+const colors = ['#fff','#d0d0ff','#a0a0ff','#e0e0ff'];
+
+for(let i = 0; i < starCount; i++){
+  let star = document.createElement('div');
+  star.className = 'star';
+
+  let size = Math.random()*2 + 1;
+  let x = Math.random() * pageWidth;
+  let y = Math.random() * pageHeight;
+
+  star.style.width = size + 'px';
+  star.style.height = size + 'px';
+  star.style.left = x + 'px';
+  star.style.top = y + 'px';
+  star.style.background = colors[Math.floor(Math.random()*colors.length)];
+
   document.body.appendChild(star);
 }
 </script>
