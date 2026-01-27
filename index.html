@@ -13,9 +13,10 @@ body{
   color:#f2f4ff;
 }
 
-/* HERO */
+/* HERO — 화면 부담 줄인 버전 */
 .hero{
-  height:85vh;
+  min-height:55vh;
+  padding:120px 20px 80px;
   display:flex;
   flex-direction:column;
   justify-content:center;
@@ -24,8 +25,15 @@ body{
   background:radial-gradient(circle at 50% 40%,#1b2044 0%,#080914 70%);
 }
 
+@media (max-width:768px){
+  .hero{
+    min-height:45vh;
+    padding:90px 15px 60px;
+  }
+}
+
 .hero h1{
-  font-size:3.2em;
+  font-size:3em;
   letter-spacing:6px;
   margin:0;
   background:linear-gradient(90deg,#fff,#9aa7ff,#fff);
@@ -42,7 +50,7 @@ body{
 
 /* 섹션 */
 .section{
-  padding:90px 20px;
+  padding:70px 20px;
   max-width:1050px;
   margin:auto;
 }
@@ -62,13 +70,14 @@ body{
   gap:35px;
 }
 
-/* 카드 */
+/* 카드 — 네모 느낌 */
 .card{
-  background:rgba(255,255,255,0.05);
-  border-radius:14px;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.08);
   padding:18px;
-  backdrop-filter:blur(10px);
-  box-shadow:0 12px 40px rgba(0,0,0,0.6);
+  border-radius:4px;
+  backdrop-filter:blur(8px);
+  box-shadow:0 10px 35px rgba(0,0,0,0.55);
   transition:0.3s;
 }
 
@@ -78,7 +87,7 @@ body{
 
 .card img,.card video{
   width:100%;
-  border-radius:12px;
+  border-radius:2px;
   margin-bottom:15px;
 }
 
@@ -92,11 +101,16 @@ body{
   line-height:1.5em;
 }
 
+/* 버튼 길게 */
 .btn{
-  display:inline-block;
-  margin-top:10px;
-  padding:8px 20px;
-  border-radius:30px;
+  display:block;
+  width:100%;
+  text-align:center;
+  margin-top:14px;
+  padding:12px 0;
+  border-radius:4px;
+  font-weight:700;
+  letter-spacing:1px;
   background:linear-gradient(90deg,#5865ff,#8f9cff);
   color:#fff;
   text-decoration:none;
@@ -129,8 +143,8 @@ footer{
 <section class="hero">
   <h1>沢多恩</h1>
   <p>
-    初めまして、沢多恩（さわだおん）と申します。<br>
-    好きな曲を歌ったり演奏したり調声したりしてます。
+    歌・演奏・調声を中心に活動している沢多恩（さわだおん）です。<br>
+    UTAU音源「沢音オフ」の提供やカバー制作などを行っています。
   </p>
 </section>
 
