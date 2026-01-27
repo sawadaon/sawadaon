@@ -3,219 +3,184 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sawada On Portfolio</title>
 
-<title>Sawada On</title>
-<meta name="description" content="Voicebank and vocal works portfolio by Sawada On.">
-
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 body{
   margin:0;
-  font-family:'Noto Sans JP', sans-serif;
-  background:#0b0c12;
-  color:#eee;
-  letter-spacing:0.4px;
+  background:#f7f7f5;
+  color:#111;
+  font-family:"Noto Serif JP","Yu Mincho",serif;
+  letter-spacing:0.04em;
   line-height:1.9;
 }
 
-.container{
-  max-width:980px;
-  margin:0 auto;
-  padding:70px 22px;
+.wrapper{
+  max-width:860px;
+  margin:80px auto;
+  padding:0 20px;
 }
 
-/* 헤더 */
-header{
+.hero{
   text-align:left;
-  padding:80px 22px 40px;
+  margin-bottom:60px;
 }
-header h1{
-  font-size:34px;
+
+.hero h1{
   margin:0;
+  font-size:28px;
   font-weight:600;
-  letter-spacing:2px;
-}
-header p{
-  margin:8px 0 0;
-  font-size:14px;
-  color:#aaa;
 }
 
-/* 섹션 타이틀 */
+.portfolio-label{
+  margin-top:6px;
+  font-size:14px;
+  letter-spacing:0.1em;
+  opacity:0.6;
+}
+
 .section-title{
+  font-family:"Noto Sans JP",sans-serif;
   font-size:13px;
-  letter-spacing:3px;
-  color:#888;
-  margin-bottom:28px;
-  border-bottom:1px solid #222;
-  padding-bottom:10px;
+  letter-spacing:0.14em;
+  margin:60px 0 20px 0;
 }
 
-/* 카드 */
 .card{
-  display:flex;
-  gap:22px;
-  margin-bottom:55px;
-  align-items:center;
-}
-.thumb{
-  width:220px;
-  min-width:220px;
-  height:140px;
-  overflow:hidden;
-}
-.thumb img, .thumb video{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.info{
-  flex:1;
-}
-.title{
-  font-size:18px;
-  font-weight:600;
-  margin-bottom:8px;
-}
-.desc{
-  font-size:14px;
-  color:#bbb;
+  background:#fff;
+  padding:30px;
+  margin-bottom:28px;
+  border:1px solid #e5e5e5;
 }
 
-/* SNS */
-.sns-list a{
+.card h3{
+  margin-top:0;
+  font-family:"Noto Sans JP",sans-serif;
+}
+
+.card p{
+  margin:8px 0;
+}
+
+iframe{
+  margin:14px 0 18px 0;
+}
+
+.download-btn{
   display:block;
-  margin-bottom:10px;
-  color:#ccc;
+  margin:16px 0 18px 0;
+  padding:10px 14px;
+  border:1px solid #111;
   text-decoration:none;
-}
-.sns-list a::before{
-  content:"↗ ";
-  font-size:13px;
+  width:fit-content;
+  color:#111;
 }
 
-/* CONTACT */
-.contact-mail{
-  margin-top:10px;
-  font-size:14px;
-  color:#ccc;
+.download-btn span{
+  margin-left:6px;
 }
 
-/* footer */
-footer{
-  text-align:center;
-  padding:40px 0 70px;
-  color:#666;
-  font-size:13px;
+.sns-card a{
+  display:block;
+  text-decoration:none;
+  margin-bottom:10px;
+  color:#111;
+}
+
+.arrow{
+  float:right;
 }
 </style>
 </head>
 
 <body>
+<div class="wrapper">
 
-<header>
+<header class="hero">
   <h1>Sawada On</h1>
-  <p>Voicebank & Vocal Works Portfolio</p>
+  <p class="portfolio-label">Portfolio</p>
 </header>
 
-<!-- PROFILE -->
-<section class="container">
-  <div class="section-title">PROFILE</div>
-  <p>
-  沢多恩（さわだおん）。<br>
-  歌唱・演奏・調声を軸に活動。<br>
-  楽曲が持つ空気や感情の流れを丁寧に汲み取り、  
-  技術よりも「作品として自然に成立すること」を大切に制作しています。  
-  主張しすぎない表現の中に、静かな存在感を残すことを目指しています。
-  </p>
-</section>
+<div class="section-title">PROFILE</div>
+<div class="card">
+沢多恩（さわだおん）<br><br>
+UTAU音源のボイスバンクを軸に活動。<br>
+歌唱だけでなく、調声・表現設計まで一貫して行い、<br>
+楽曲の空気感や感情の流れを丁寧に組み立てることを大切にしています。<br><br>
+強い個性を押し出すよりも、作品として自然に心へ届く完成度を重視する表現志向の制作者。
+</div>
 
-<!-- VOICEBANKS -->
-<section class="container">
-  <div class="section-title">VOICEBANKS</div>
+<div class="section-title">WORKS</div>
 
-  <div class="card">
-    <div class="thumb">
-      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
-    </div>
-    <div class="info">
-      <div class="title">沢音オフ</div>
-      <div class="desc">
-        Voice Provider：沢多恩<br>
-        Otoing：파슈様<br>
-        Character Illustration：シロマル様<br>
-        Special Thanks：AisE様
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Voicebank -->
+<div class="card">
+  <h3>Voicebank</h3>
 
-<!-- WORKS -->
-<section class="container">
-  <div class="section-title">WORKS</div>
+  <iframe width="100%" height="315"
+    src="https://www.youtube.com/embed/k8BRzEfS0LE"
+    frameborder="0" allowfullscreen>
+  </iframe>
 
-  <div class="card">
-    <div class="thumb">
-      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
-    </div>
-    <div class="info">
-      <div class="title">UTAUカバー</div>
-      <div class="desc">
-        Original：Kai様 / Illustration：yoake様<br>
-        Vocal：沢音オフ / Tuning & Mix：沢多恩
-      </div>
-    </div>
-  </div>
+  <a class="download-btn" href="https://bowlroll.net/file/347586" target="_blank">
+    Download Voicebank <span>↗</span>
+  </a>
 
-  <div class="card">
-    <div class="thumb">
-      <video controls>
-        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4">
-      </video>
-    </div>
-    <div class="info">
-      <div class="title">調声晒し</div>
-      <div class="desc">
-        Original：大沼パセリ様 / VSQX：music_is_genre様<br>
-        Vocal：沢音オフ / Tuning & Mix：沢多恩
-      </div>
-    </div>
-  </div>
+  <p>Voice Bank：沢音オフ</p>
+  <p>Otoing：파슈様</p>
+  <p>Standing：シロマル様</p>
+  <p>Music：AisE様</p>
+  <p>Voice Provider：沢多恩</p>
+</div>
 
-  <div class="card">
-    <div class="thumb">
-      <video controls>
-        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4">
-      </video>
-    </div>
-    <div class="info">
-      <div class="title">歌ってみた</div>
-      <div class="desc">
-        Original：seiza様 / Vocal & Mix：沢多恩
-      </div>
-    </div>
-  </div>
+<!-- UTAU Cover -->
+<div class="card">
+  <h3>UTAU Cover</h3>
 
-</section>
+  <iframe width="100%" height="315"
+    src="https://www.youtube.com/embed/hALBKqm9QFQ"
+    frameborder="0" allowfullscreen>
+  </iframe>
 
-<!-- CONTACT -->
-<section class="container">
-  <div class="section-title">CONTACT</div>
+  <p>Tuning：Sawada On</p>
+  <p>Original：〇〇様</p>
+</div>
 
-  <div class="sns-list">
-    <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-    <a href="https://x.com/on3ic" target="_blank">X (Twitter)</a>
-  </div>
+<!-- Vocal Covers -->
+<div class="card">
+  <h3>Vocal Cover</h3>
+  <p>Mix：Sawada On</p>
+  <p>Original：〇〇様</p>
+</div>
 
-  <div class="contact-mail">
-    sawadaon3@gmail.com
-  </div>
-</section>
+<div class="card">
+  <h3>Vocal Cover</h3>
+  <p>Mix：Sawada On</p>
+  <p>Original：〇〇様</p>
+</div>
 
-<footer>
-© 2026 Sawada On — All Rights Reserved.
-</footer>
+<div class="card">
+  <h3>Vocal Cover</h3>
+  <p>Mix：Sawada On</p>
+  <p>Original：〇〇様</p>
+</div>
 
+<div class="section-title">SNS</div>
+<div class="card sns-card">
+  <a href="유튜브링크" target="_blank">
+    YouTube <span class="arrow">↗</span>
+  </a>
+  <a href="트위터링크" target="_blank">
+    Twitter <span class="arrow">↗</span>
+  </a>
+</div>
+
+<div class="section-title">CONTACT</div>
+<div class="card">
+  Email：example@email.com
+</div>
+
+</div>
 </body>
 </html>
