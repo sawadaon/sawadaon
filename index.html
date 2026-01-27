@@ -36,13 +36,14 @@ body{
 .hero p{
   margin-top:20px;
   color:#c8ccff;
-  max-width:600px;
+  max-width:650px;
+  line-height:1.6em;
 }
 
-/* 섹션 공통 */
+/* 섹션 */
 .section{
-  padding:80px 20px;
-  max-width:1000px;
+  padding:90px 20px;
+  max-width:1050px;
   margin:auto;
 }
 
@@ -54,54 +55,41 @@ body{
   padding-left:15px;
 }
 
-/* 대표작 */
-.featured{
-  display:flex;
-  gap:30px;
-  flex-wrap:wrap;
-}
-
-.featured video,
-.featured img{
-  width:100%;
-  max-width:480px;
-  border-radius:14px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.6);
-}
-
-/* 작품 카드 */
-.work-grid{
+/* 그리드 */
+.grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-  gap:30px;
+  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+  gap:35px;
 }
 
-.work{
+/* 카드 */
+.card{
   background:rgba(255,255,255,0.05);
-  padding:20px;
-  border-radius:12px;
-  backdrop-filter:blur(8px);
+  border-radius:14px;
+  padding:18px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 12px 40px rgba(0,0,0,0.6);
   transition:0.3s;
 }
 
-.work:hover{
+.card:hover{
   transform:translateY(-6px);
-  box-shadow:0 10px 35px rgba(0,0,0,0.6);
 }
 
-.work img,.work video{
+.card img,.card video{
   width:100%;
-  border-radius:10px;
+  border-radius:12px;
   margin-bottom:15px;
 }
 
-.work h3{
+.card h3{
   margin:0 0 8px 0;
 }
 
-.work p{
+.card p{
   font-size:0.9em;
-  color:#cfcfff;
+  color:#d2d6ff;
+  line-height:1.5em;
 }
 
 .btn{
@@ -117,7 +105,7 @@ body{
 /* SNS */
 .links{
   text-align:center;
-  padding:60px 0;
+  padding:70px 0 40px;
 }
 
 .links a{
@@ -140,43 +128,85 @@ footer{
 <!-- HERO -->
 <section class="hero">
   <h1>沢多恩</h1>
-  <p>歌・演奏・調声を行うアーティスト。UTAU音源「沢音オフ」提供者。</p>
-</section>
-
-<!-- FEATURED WORK -->
-<section class="section">
-  <div class="section-title">Featured Work</div>
-  <div class="featured">
-    <video controls src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4"></video>
-    <video controls src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4"></video>
-  </div>
+  <p>
+    初めまして、沢多恩（さわだおん）と申します。<br>
+    好きな曲を歌ったり演奏したり調声したりしてます。
+  </p>
 </section>
 
 <!-- VOICEBANK -->
 <section class="section">
   <div class="section-title">Voicebank</div>
-  <div class="work-grid">
+  <div class="grid">
 
-    <div class="work">
+    <div class="card">
       <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
       <h3>沢音オフ</h3>
-      <p>voice provider：沢多恩</p>
+      <p>
+        otoing：파슈様<br>
+        standing：シロマル様<br>
+        special thanks：AisE様<br>
+        voice provider：沢多恩
+      </p>
       <a class="btn" href="https://bowlroll.net/file/347586" target="_blank">Download</a>
     </div>
 
   </div>
 </section>
 
-<!-- COVERS -->
+<!-- WORKS -->
 <section class="section">
-  <div class="section-title">Works / Covers</div>
-  <div class="work-grid">
+  <div class="section-title">Works</div>
+  <div class="grid">
 
-    <div class="work">
+    <div class="card">
       <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
       <h3>UTAUカバー</h3>
-      <p>tuning･mix：沢多恩</p>
+      <p>
+        original：Kai様<br>
+        illustration：yoake様<br>
+        vocal：沢音オフ<br>
+        tuning･mix：沢多恩
+      </p>
       <a class="btn" href="https://youtu.be/hALBKqm9QFQ" target="_blank">Listen</a>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata">
+        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
+      </video>
+      <h3>調声晒し</h3>
+      <p>
+        original：大沼パセリ様<br>
+        vsqx：music_is_genre様<br>
+        vocal：沢音オフ<br>
+        tuning･mix：沢多恩
+      </p>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata">
+        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
+      </video>
+      <h3>歌ってみた</h3>
+      <p>
+        original：seiza様<br>
+        vocal･mix：沢多恩<br><br>
+        本家様の動画をお借りしてます
+      </p>
+    </div>
+
+    <div class="card">
+      <video controls preload="metadata">
+        <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
+      </video>
+      <h3>歌ってみた</h3>
+      <p>
+        original：DECO*27様<br>
+        ed/mix/ma：Juntae kim様<br>
+        vocal：沢多恩<br><br>
+        本家様の動画をお借りしてます
+      </p>
     </div>
 
   </div>
