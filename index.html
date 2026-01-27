@@ -5,58 +5,49 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>沢多恩</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#f2f3f6;
-  --panel:#ffffff;
-  --line:#d9dde3;
-  --text:#1a1d21;
-  --sub:#6b7280;
-}
-
 html{scroll-behavior:smooth;}
 
 body{
   margin:0;
-  background:var(--bg);
-  font-family:'Inter',sans-serif;
-  color:var(--text);
-  line-height:1.7;
+  background:#ffffff;
+  color:#111;
+  font-family:'Noto Sans JP', sans-serif;
+  line-height:1.8;
 }
 
 /* 상단 */
 header{
-  max-width:900px;
-  margin:80px auto 40px;
+  max-width:920px;
+  margin:70px auto 40px;
   padding:0 20px;
 }
 
 h1{
-  font-size:28px;
+  font-size:26px;
   margin:0 0 10px;
   font-weight:600;
   letter-spacing:2px;
 }
 
 nav{
-  margin-top:20px;
+  margin-top:18px;
   display:flex;
-  gap:25px;
+  gap:26px;
+  font-size:14px;
 }
 
 nav a{
   text-decoration:none;
-  color:var(--text);
-  font-size:14px;
-  letter-spacing:1px;
+  color:#111;
 }
 
-/* 공통 섹션 */
+/* 섹션 공통 */
 section{
-  max-width:900px;
-  margin:60px auto;
+  max-width:920px;
+  margin:70px auto;
   padding:0 20px;
 }
 
@@ -67,37 +58,48 @@ h2{
 }
 
 /* 소개 */
-.about{
-  border-top:1px solid var(--line);
-  padding-top:25px;
-  color:var(--sub);
+#about{
+  color:#555;
   font-size:14px;
+  border-top:1px solid #e5e7eb;
+  padding-top:25px;
 }
 
-/* 영상 카드 */
-.card{
-  border:1px solid var(--line);
-  background:var(--panel);
-  margin-bottom:40px;
-}
-
-.card iframe{
+/* 영상 비율 */
+.video-wrap{
+  position:relative;
   width:100%;
-  height:400px;
+  padding-top:56.25%;
+}
+
+.video-wrap iframe,
+.video-wrap video{
+  position:absolute;
+  top:0; left:0;
+  width:100%;
+  height:100%;
+  object-fit:cover;
   border:0;
 }
 
+/* 카드 */
+.card{
+  border:1px solid #e5e7eb;
+  margin-bottom:50px;
+  background:#fff;
+}
+
 .credit{
-  padding:18px 22px;
+  padding:16px 20px;
   font-size:13px;
-  color:var(--sub);
-  border-top:1px solid var(--line);
+  color:#666;
   line-height:1.8;
+  border-top:1px solid #e5e7eb;
 }
 
 /* contact */
-.contact{
-  border-top:1px solid var(--line);
+#contact{
+  border-top:1px solid #e5e7eb;
   padding-top:20px;
   font-size:14px;
 }
@@ -115,27 +117,92 @@ h2{
   </nav>
 </header>
 
-<section id="about" class="about">
-初めまして、沢多恩（さわだおん）と申します。  
-好きな曲を歌ったり演奏したり調声したりしています。
+<section id="about">
+沢多恩（さわだおん）です。<br>
+歌唱・演奏・調声を中心に活動しています。<br>
+楽曲の世界観を大切にしながら作品制作を行っています。
 </section>
 
 <section id="works">
 <h2>WORKS</h2>
 
+<!-- 🌙 沢音オフ -->
 <div class="card">
-  <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="credit">
+    <strong>Voice Provider：</strong>沢多恩<br>
+    <strong>Otoing：</strong>파슈様<br>
+    <strong>Standing：</strong>シロマル様<br>
+    <strong>Special Thanks：</strong>AisE様
+  </div>
+</div>
+
+<!-- 🎵 UTAUカバー -->
+<div class="card">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" type="video/mp4">
+    </video>
+  </div>
   <div class="credit">
     <strong>Original：</strong>Kai様<br>
+    <strong>Illustration：</strong>yoake様<br>
     <strong>Vocal：</strong>沢音オフ<br>
-    <strong>Tuning / Mix：</strong>沢多恩<br>
-    <strong>Illustration：</strong>yoake様
+    <strong>Tuning･Mix：</strong>沢多恩
+  </div>
+</div>
+
+<!-- 🎛 調声晒し -->
+<div class="card">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="credit">
+    <strong>Original：</strong>大沼パセリ様<br>
+    <strong>VSQX：</strong>music_is_genre様<br>
+    <strong>Vocal：</strong>沢音オフ<br>
+    <strong>Tuning･Mix：</strong>沢多恩
+  </div>
+</div>
+
+<!-- 🎤 歌ってみた seiza -->
+<div class="card">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="credit">
+    <strong>Original：</strong>seiza様<br>
+    <strong>Vocal･Mix：</strong>沢多恩<br>
+    本家様の動画をお借りしています
+  </div>
+</div>
+
+<!-- 🎤 DECO*27 カバー -->
+<div class="card">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="credit">
+    <strong>Original：</strong>DECO*27様<br>
+    <strong>Ed/Mix/Ma：</strong>Juntae Kim様<br>
+    <strong>Vocal：</strong>沢多恩<br>
+    本家様の動画をお借りしています
   </div>
 </div>
 
 </section>
 
-<section id="contact" class="contact">
+<section id="contact">
 <h2>CONTACT</h2>
 sawadaon3@gmail.com
 </section>
