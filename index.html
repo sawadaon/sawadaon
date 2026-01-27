@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>沢多恩</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
 html{scroll-behavior:smooth;}
@@ -18,7 +18,6 @@ body{
   line-height:1.8;
 }
 
-/* 상단 */
 header{
   max-width:920px;
   margin:70px auto 40px;
@@ -28,7 +27,7 @@ header{
 h1{
   font-size:26px;
   margin:0 0 10px;
-  font-weight:600;
+  font-weight:700;
   letter-spacing:2px;
 }
 
@@ -44,7 +43,6 @@ nav a{
   color:#111;
 }
 
-/* 섹션 공통 */
 section{
   max-width:920px;
   margin:70px auto;
@@ -57,7 +55,6 @@ h2{
   margin-bottom:20px;
 }
 
-/* 소개 */
 #about{
   color:#555;
   font-size:14px;
@@ -65,24 +62,21 @@ h2{
   padding-top:25px;
 }
 
-/* 영상 비율 */
+/* 16:9 영상 */
 .video-wrap{
   position:relative;
   width:100%;
   padding-top:56.25%;
 }
 
-.video-wrap iframe,
-.video-wrap video{
+.video-wrap iframe{
   position:absolute;
   top:0; left:0;
   width:100%;
   height:100%;
-  object-fit:cover;
   border:0;
 }
 
-/* 카드 */
 .card{
   border:1px solid #e5e7eb;
   margin-bottom:50px;
@@ -97,7 +91,6 @@ h2{
   border-top:1px solid #e5e7eb;
 }
 
-/* contact */
 #contact{
   border-top:1px solid #e5e7eb;
   padding-top:20px;
@@ -126,77 +119,37 @@ h2{
 <section id="works">
 <h2>WORKS</h2>
 
-<!-- 🌙 沢音オフ -->
+<!-- 🎤 1번 카드 (사와네오프) -->
 <div class="card">
   <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
-    </video>
+    <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
   </div>
   <div class="credit">
-    <strong>Voice Provider：</strong>沢多恩<br>
+    <strong>Voice bank：</strong>沢音オフ<br>
     <strong>Otoing：</strong>파슈様<br>
     <strong>Standing：</strong>シロマル様<br>
-    <strong>Special Thanks：</strong>AisE様
+    <strong>Music：</strong>AisE様<br>
+    <strong>Voice Provider：</strong>沢多恩
   </div>
 </div>
 
-<!-- 🎵 UTAUカバー -->
+<!-- 🎵 2번 카드 (UTAUカバー) -->
 <div class="card">
   <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg" type="video/mp4">
-    </video>
+    <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
   </div>
   <div class="credit">
-    <strong>Original：</strong>Kai様<br>
-    <strong>Illustration：</strong>yoake様<br>
-    <strong>Vocal：</strong>沢音オフ<br>
-    <strong>Tuning･Mix：</strong>沢多恩
+    <!-- 네가 이전에 쓰던 크레딧 유지 가능 -->
   </div>
 </div>
 
-<!-- 🎛 調声晒し -->
+<!-- 🆕 3번 카드 자리 (새로 작성용) -->
 <div class="card">
   <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
-    </video>
+    <!-- 영상 넣을 자리 -->
   </div>
   <div class="credit">
-    <strong>Original：</strong>大沼パセリ様<br>
-    <strong>VSQX：</strong>music_is_genre様<br>
-    <strong>Vocal：</strong>沢音オフ<br>
-    <strong>Tuning･Mix：</strong>沢多恩
-  </div>
-</div>
-
-<!-- 🎤 歌ってみた seiza -->
-<div class="card">
-  <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="credit">
-    <strong>Original：</strong>seiza様<br>
-    <strong>Vocal･Mix：</strong>沢多恩<br>
-    本家様の動画をお借りしています
-  </div>
-</div>
-
-<!-- 🎤 DECO*27 カバー -->
-<div class="card">
-  <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="credit">
-    <strong>Original：</strong>DECO*27様<br>
-    <strong>Ed/Mix/Ma：</strong>Juntae Kim様<br>
-    <strong>Vocal：</strong>沢多恩<br>
-    本家様の動画をお借りしています
+    <!-- 크레딧 작성할 자리 -->
   </div>
 </div>
 
