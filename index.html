@@ -1,102 +1,124 @@
-<!DOCTYPE html>
+\<!DOCTYPE html>
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>沢多恩 Portfolio</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600&display=swap" rel="stylesheet">
 
 <style>
+html{scroll-behavior:smooth;}
 body{
   margin:0;
-  background:#f8f8f6;
+  background:#f6f6f4;
   color:#111;
-  font-family:"Noto Sans JP",sans-serif;
-  letter-spacing:0.05em;
+  font-family:'Noto Sans JP', sans-serif;
+  letter-spacing:0.04em;
   line-height:1.9;
 }
 
+/* 레이아웃 */
 .wrapper{
-  max-width:900px;
-  margin:100px auto;
-  padding:0 20px;
+  max-width:920px;
+  margin:80px auto;
+  padding:0 22px;
 }
 
+/* 헤더 */
 .hero{
   text-align:center;
-  margin-bottom:90px;
+  margin-bottom:60px;
 }
 
 .hero h1{
-  font-size:30px;
   margin:0;
+  font-size:30px;
   font-weight:600;
 }
 
-.jp-name{ color:#111; }
-.en-name{ color:#888; font-weight:400; margin-left:6px; }
-
 .portfolio-label{
-  margin-top:10px;
-  letter-spacing:0.15em;
-  font-size:14px;
-  color:#888;
-}
-
-.section-title{
-  margin:70px 0 18px 0;
-  font-size:13px;
+  margin-top:6px;
+  color:#777;
   letter-spacing:0.18em;
-  color:#666;
+  font-size:14px;
 }
 
-/* 박스 대신 선 구분 */
+/* 상단 메뉴 */
+.nav{
+  text-align:center;
+  margin-top:28px;
+}
+.nav a{
+  text-decoration:none;
+  color:#111;
+  margin:0 18px;
+  font-size:14px;
+  letter-spacing:0.12em;
+}
+
+/* 섹션 제목 */
+.section-title{
+  margin:80px 0 20px;
+  font-size:13px;
+  letter-spacing:0.2em;
+  color:#666;
+  border-top:1px solid #ddd;
+  padding-top:20px;
+}
+
+/* 작품 */
 .work-item{
-  padding:34px 0;
-  border-top:1px solid #e2e2e2;
+  padding:40px 0;
+  border-top:1px solid #e3e3e3;
 }
 
 .work-flex{
   display:flex;
-  gap:40px;
-  align-items:flex-start;
+  gap:36px;
 }
 
-.work-flex iframe{
-  flex:1.1;
+.work-flex iframe,
+.work-flex video{
+  flex:1.2;
+  width:100%;
+  height:260px;
 }
 
 .work-text{
   flex:1;
+  font-size:14px;
 }
 
 .work-text p{
-  margin:8px 0;
+  margin:6px 0;
 }
 
 .download-btn{
   display:inline-block;
-  margin:14px 0 18px 0;
+  margin:12px 0 16px;
   text-decoration:none;
+  color:#111;
   border-bottom:1px solid #111;
   padding-bottom:2px;
-  color:#111;
 }
+.download-btn span{ margin-left:10px; }
 
-.download-btn span{
-  margin-left:6px;
-}
-
+/* SNS */
 .sns a{
   display:block;
   text-decoration:none;
-  margin:6px 0;
   color:#111;
+  margin:6px 0;
+}
+.sns span{
+  margin-left:12px;
 }
 
-.arrow{
-  float:right;
+/* 반응형 */
+@media(max-width:760px){
+  .work-flex{flex-direction:column;}
+  .work-flex iframe,.work-flex video{height:220px;}
 }
 </style>
 </head>
@@ -105,31 +127,28 @@ body{
 <div class="wrapper">
 
 <header class="hero">
-  <h1>
-    <span class="jp-name">沢多恩</span>
-    <span class="en-name">Sawada On</span>
-  </h1>
+  <h1>沢多恩 Sawada On</h1>
   <div class="portfolio-label">Portfolio</div>
+
+  <div class="nav">
+    <a href="#profile">PROFILE</a>
+    <a href="#works">WORKS</a>
+    <a href="#contact">CONTACT</a>
+  </div>
 </header>
 
-<div class="section-title">PROFILE</div>
-<div>
+<div id="profile" class="section-title">PROFILE</div>
 沢多恩（さわだおん）<br><br>
-UTAU音源のボイスバンクを軸に活動。  
-歌唱だけでなく、調声・表現設計まで一貫して行い、  
-楽曲の空気感や感情の流れを丁寧に組み立てることを大切にしています。<br><br>
-強い個性を押し出すよりも、作品として自然に心へ届く完成度を重視する表現志向の制作者。
-</div>
+UTAU音源のボイスバンクを軸に活動。歌唱だけでなく調声・表現設計まで一貫して行い、
+楽曲の空気や感情の流れを丁寧に組み立てる制作を大切にしています。<br><br>
+派手さよりも自然に心へ届く完成度を重視する表現志向の制作者。
 
-<div class="section-title">WORKS</div>
+<div id="works" class="section-title">WORKS</div>
 
 <!-- Voicebank -->
 <div class="work-item">
   <div class="work-flex">
-    <iframe width="100%" height="260"
-      src="https://www.youtube.com/embed/k8BRzEfS0LE"
-      frameborder="0" allowfullscreen></iframe>
-
+    <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" frameborder="0" allowfullscreen></iframe>
     <div class="work-text">
       <h3>Voicebank</h3>
       <a class="download-btn" href="https://bowlroll.net/file/347586" target="_blank">
@@ -147,45 +166,28 @@ UTAU音源のボイスバンクを軸に活動。
 <!-- UTAU Cover -->
 <div class="work-item">
   <div class="work-flex">
-    <iframe width="100%" height="260"
-      src="https://www.youtube.com/embed/hALBKqm9QFQ"
-      frameborder="0" allowfullscreen></iframe>
-
+    <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" frameborder="0" allowfullscreen></iframe>
     <div class="work-text">
       <h3>UTAU Cover</h3>
-      <p>Tuning：Sawada On</p>
-      <p>Original：〇〇様</p>
+      <p>Tuning：沢多恩</p>
+      <p>Original：Kai様</p>
     </div>
   </div>
 </div>
 
-<!-- Vocal Covers -->
-<div class="work-item">
-  <h3>Vocal Cover</h3>
-  <p>Mix：Sawada On</p>
-  <p>Original：〇〇様</p>
-</div>
-
-<div class="work-item">
-  <h3>Vocal Cover</h3>
-  <p>Mix：Sawada On</p>
-  <p>Original：〇〇様</p>
-</div>
-
-<div class="work-item">
-  <h3>Vocal Cover</h3>
-  <p>Mix：Sawada On</p>
-  <p>Original：〇〇様</p>
-</div>
+<!-- 나머지 커버 3개 자리 -->
+<div class="work-item"><h3>Vocal Cover</h3></div>
+<div class="work-item"><h3>Vocal Cover</h3></div>
+<div class="work-item"><h3>Vocal Cover</h3></div>
 
 <div class="section-title">SNS</div>
 <div class="sns">
-  <a href="유튜브링크" target="_blank">YouTube <span class="arrow">↗</span></a>
-  <a href="트위터링크" target="_blank">Twitter <span class="arrow">↗</span></a>
+  <a href="유튜브링크" target="_blank">YouTube <span>↗</span></a>
+  <a href="트위터링크" target="_blank">Twitter <span>↗</span></a>
 </div>
 
-<div class="section-title">CONTACT</div>
-<div>Email：example@email.com</div>
+<div id="contact" class="section-title">CONTACT</div>
+Email：sawadaon3@gmail.com
 
 </div>
 </body>
