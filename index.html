@@ -2,99 +2,131 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
+<meta name="description" content="Vocal & Tuning Portfolio by Sawada On – Voice recordings, tuning works, covers, socials, and contact.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>沢多恩</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<title>Sawada On Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
 
 <style>
-html{scroll-behavior:smooth;}
-
-body{
-  margin:0;
-  background:#ffffff;
-  color:#111;
-  font-family:'Noto Sans JP', sans-serif;
-  line-height:1.8;
+html, body{
+  margin:0; padding:0;
+  font-family:'Rubik', sans-serif;
+  background:#0a0a14;
+  color:#eee;
+  scroll-behavior:smooth;
 }
 
+/* 공통 컨테이너 */
+.container{
+  width:90%;
+  max-width:960px;
+  margin:0 auto;
+  padding:60px 0;
+}
+
+/* 헤더 */
 header{
-  max-width:920px;
-  margin:70px auto 40px;
-  padding:0 20px;
+  text-align:center;
+  padding:60px 0 30px;
 }
-
-h1{
-  font-size:26px;
-  margin:0 0 10px;
+header h1{
+  font-family:'Playfair Display', serif;
+  font-size:2.8rem;
   font-weight:700;
+  margin:0;
   letter-spacing:2px;
 }
+header p{
+  font-size:1rem;
+  margin:8px 0 0;
+  color:#bbb;
+}
 
-nav{
-  margin-top:18px;
+/* 섹션 제목 */
+.section-title{
+  font-family:'Playfair Display', serif;
+  font-size:1.6rem;
+  font-weight:700;
+  border-bottom:2px solid #444;
+  padding-bottom:10px;
+  margin-bottom:30px;
+  color:#fff;
+}
+
+/* ABOUT */
+#about p{
+  line-height:1.6;
+  font-size:1rem;
+  color:#ccc;
+}
+
+/* WORKS 카드 */
+.card{
+  background:rgba(255,255,255,0.05);
+  padding:18px;
+  border:1px solid #333;
+  margin-bottom:40px;
   display:flex;
-  gap:26px;
-  font-size:14px;
+  gap:18px;
+  align-items:center;
+  transition:0.3s;
 }
-
-nav a{
-  text-decoration:none;
-  color:#111;
+.card:hover{
+  transform:translateY(-3px);
+  box-shadow:0 6px 18px rgba(0,0,0,0.4);
 }
-
-section{
-  max-width:920px;
-  margin:70px auto;
-  padding:0 20px;
+.card .thumb{
+  flex:1;
+  min-width:180px;
+  overflow:hidden;
 }
-
-h2{
-  font-size:14px;
-  letter-spacing:2px;
-  margin-bottom:20px;
-}
-
-#about{
-  color:#555;
-  font-size:14px;
-  border-top:1px solid #e5e7eb;
-  padding-top:25px;
-}
-
-/* 16:9 영상 */
-.video-wrap{
-  position:relative;
-  width:100%;
-  padding-top:56.25%;
-}
-
-.video-wrap iframe{
-  position:absolute;
-  top:0; left:0;
+.card .thumb img,
+.card .thumb video{
   width:100%;
   height:100%;
-  border:0;
+  object-fit:cover;
+}
+.card .info{
+  flex:2;
+}
+.card .title{
+  font-family:'Playfair Display', serif;
+  font-size:1.3rem;
+  margin:0 0 6px;
+}
+.card .desc{
+  font-size:0.9rem;
+  color:#ccc;
+  line-height:1.6;
 }
 
-.card{
-  border:1px solid #e5e7eb;
-  margin-bottom:50px;
-  background:#fff;
+/* CONTACT */
+#contact .links{
+  display:flex;
+  justify-content:center;
+  gap:26px;
+  margin-top:20px;
+}
+.linkBtn{
+  background:rgba(255,255,255,0.1);
+  padding:10px 18px;
+  border:1px solid #555;
+  color:#eee;
+  text-decoration:none;
+  font-weight:500;
+}
+.linkBtn:hover{
+  background:rgba(255,255,255,0.2);
 }
 
-.credit{
-  padding:16px 20px;
-  font-size:13px;
-  color:#666;
-  line-height:1.8;
-  border-top:1px solid #e5e7eb;
-}
-
-#contact{
-  border-top:1px solid #e5e7eb;
-  padding-top:20px;
-  font-size:14px;
+/* footer */
+footer{
+  text-align:center;
+  padding:24px 0 60px;
+  font-size:0.85rem;
+  color:#888;
 }
 </style>
 </head>
@@ -102,63 +134,52 @@ h2{
 <body>
 
 <header>
-  <h1>沢多恩 / Sawada On</h1>
-  <nav>
-    <a href="#about">ABOUT</a>
-    <a href="#works">WORKS</a>
-    <a href="#contact">CONTACT</a>
-  </nav>
+  <h1>Sawada On</h1>
+  <p>Vocal & Tuning Works Portfolio</p>
 </header>
 
-<section id="about">
-沢多恩（さわだおん）です。<br>
-歌唱・演奏・調声を中心に活動しています。<br>
-楽曲の世界観を大切にしながら作品制作を行っています。
+<section id="about" class="container">
+  <div class="section-title">ABOUT</div>
+  <p>
+    初めまして、沢多恩（さわだおん）と申します。歌唱・演奏・調声を中心に活動しています。
+  </p>
 </section>
 
-<section id="works">
-<h2>WORKS</h2>
+<section id="works" class="container">
+  <div class="section-title">WORKS</div>
 
-<!-- 🎤 1번 카드 (사와네오프) -->
-<div class="card">
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
+  <!-- WORK CARD EXAMPLE -->
+  <div class="card">
+    <div class="thumb">
+      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
+    </div>
+    <div class="info">
+      <div class="title">沢音オフ</div>
+      <div class="desc">
+        Voice Provider：沢多恩<br>
+        Otoing：파슈様<br>
+        Character Illustration：シロマル様<br>
+        Special Thanks：AisE様
+      </div>
+    </div>
   </div>
-  <div class="credit">
-    <strong>Voice bank：</strong>沢音オフ<br>
-    <strong>Otoing：</strong>파슈様<br>
-    <strong>Standing：</strong>シロマル様<br>
-    <strong>Music：</strong>AisE様<br>
-    <strong>Voice Provider：</strong>沢多恩
-  </div>
-</div>
 
-<!-- 🎵 2번 카드 (UTAUカバー) -->
-<div class="card">
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
-  </div>
-  <div class="credit">
-    <!-- 네가 이전에 쓰던 크레딧 유지 가능 -->
-  </div>
-</div>
-
-<!-- 🆕 3번 카드 자리 (새로 작성용) -->
-<div class="card">
-  <div class="video-wrap">
-    <!-- 영상 넣을 자리 -->
-  </div>
-  <div class="credit">
-    <!-- 크레딧 작성할 자리 -->
-  </div>
-</div>
+  <!-- 더 카드 반복 가능 -->
 
 </section>
 
-<section id="contact">
-<h2>CONTACT</h2>
-sawadaon3@gmail.com
+<section id="contact" class="container">
+  <div class="section-title">CONTACT</div>
+  <div class="links">
+    <a class="linkBtn" href="mailto:sawadaon3@gmail.com">EMAIL</a>
+    <a class="linkBtn" href="https://www.youtube.com/@sawadaon" target="_blank">YOUTUBE</a>
+    <a class="linkBtn" href="https://x.com/on3ic" target="_blank">TWITTER</a>
+  </div>
 </section>
+
+<footer>
+  &copy; 2026 Sawada On — All Rights Reserved.
+</footer>
 
 </body>
 </html>
