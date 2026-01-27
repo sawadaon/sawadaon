@@ -2,131 +2,112 @@
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
-<meta name="description" content="Vocal & Tuning Portfolio by Sawada On – Voice recordings, tuning works, covers, socials, and contact.">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sawada On Portfolio</title>
+<title>Sawada On</title>
+<meta name="description" content="Voicebank and vocal works portfolio by Sawada On.">
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Rubik:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
-html, body{
-  margin:0; padding:0;
-  font-family:'Rubik', sans-serif;
-  background:#0a0a14;
+body{
+  margin:0;
+  font-family:'Noto Sans JP', sans-serif;
+  background:#0b0c12;
   color:#eee;
-  scroll-behavior:smooth;
+  letter-spacing:0.4px;
+  line-height:1.9;
 }
 
-/* 공통 컨테이너 */
 .container{
-  width:90%;
-  max-width:960px;
+  max-width:980px;
   margin:0 auto;
-  padding:60px 0;
+  padding:70px 22px;
 }
 
 /* 헤더 */
 header{
-  text-align:center;
-  padding:60px 0 30px;
+  text-align:left;
+  padding:80px 22px 40px;
 }
 header h1{
-  font-family:'Playfair Display', serif;
-  font-size:2.8rem;
-  font-weight:700;
+  font-size:34px;
   margin:0;
+  font-weight:600;
   letter-spacing:2px;
 }
 header p{
-  font-size:1rem;
   margin:8px 0 0;
-  color:#bbb;
+  font-size:14px;
+  color:#aaa;
 }
 
-/* 섹션 제목 */
+/* 섹션 타이틀 */
 .section-title{
-  font-family:'Playfair Display', serif;
-  font-size:1.6rem;
-  font-weight:700;
-  border-bottom:2px solid #444;
+  font-size:13px;
+  letter-spacing:3px;
+  color:#888;
+  margin-bottom:28px;
+  border-bottom:1px solid #222;
   padding-bottom:10px;
-  margin-bottom:30px;
-  color:#fff;
 }
 
-/* ABOUT */
-#about p{
-  line-height:1.6;
-  font-size:1rem;
-  color:#ccc;
-}
-
-/* WORKS 카드 */
+/* 카드 */
 .card{
-  background:rgba(255,255,255,0.05);
-  padding:18px;
-  border:1px solid #333;
-  margin-bottom:40px;
   display:flex;
-  gap:18px;
+  gap:22px;
+  margin-bottom:55px;
   align-items:center;
-  transition:0.3s;
 }
-.card:hover{
-  transform:translateY(-3px);
-  box-shadow:0 6px 18px rgba(0,0,0,0.4);
-}
-.card .thumb{
-  flex:1;
-  min-width:180px;
+.thumb{
+  width:220px;
+  min-width:220px;
+  height:140px;
   overflow:hidden;
 }
-.card .thumb img,
-.card .thumb video{
+.thumb img, .thumb video{
   width:100%;
   height:100%;
   object-fit:cover;
 }
-.card .info{
-  flex:2;
+.info{
+  flex:1;
 }
-.card .title{
-  font-family:'Playfair Display', serif;
-  font-size:1.3rem;
-  margin:0 0 6px;
+.title{
+  font-size:18px;
+  font-weight:600;
+  margin-bottom:8px;
 }
-.card .desc{
-  font-size:0.9rem;
+.desc{
+  font-size:14px;
+  color:#bbb;
+}
+
+/* SNS */
+.sns-list a{
+  display:block;
+  margin-bottom:10px;
   color:#ccc;
-  line-height:1.6;
+  text-decoration:none;
+}
+.sns-list a::before{
+  content:"↗ ";
+  font-size:13px;
 }
 
 /* CONTACT */
-#contact .links{
-  display:flex;
-  justify-content:center;
-  gap:26px;
-  margin-top:20px;
-}
-.linkBtn{
-  background:rgba(255,255,255,0.1);
-  padding:10px 18px;
-  border:1px solid #555;
-  color:#eee;
-  text-decoration:none;
-  font-weight:500;
-}
-.linkBtn:hover{
-  background:rgba(255,255,255,0.2);
+.contact-mail{
+  margin-top:10px;
+  font-size:14px;
+  color:#ccc;
 }
 
 /* footer */
 footer{
   text-align:center;
-  padding:24px 0 60px;
-  font-size:0.85rem;
-  color:#888;
+  padding:40px 0 70px;
+  color:#666;
+  font-size:13px;
 }
 </style>
 </head>
@@ -135,20 +116,25 @@ footer{
 
 <header>
   <h1>Sawada On</h1>
-  <p>Vocal & Tuning Works Portfolio</p>
+  <p>Voicebank & Vocal Works Portfolio</p>
 </header>
 
-<section id="about" class="container">
-  <div class="section-title">ABOUT</div>
+<!-- PROFILE -->
+<section class="container">
+  <div class="section-title">PROFILE</div>
   <p>
-    初めまして、沢多恩（さわだおん）と申します。歌唱・演奏・調声を中心に活動しています。
+  沢多恩（さわだおん）。<br>
+  歌唱・演奏・調声を軸に活動。<br>
+  楽曲が持つ空気や感情の流れを丁寧に汲み取り、  
+  技術よりも「作品として自然に成立すること」を大切に制作しています。  
+  主張しすぎない表現の中に、静かな存在感を残すことを目指しています。
   </p>
 </section>
 
-<section id="works" class="container">
-  <div class="section-title">WORKS</div>
+<!-- VOICEBANKS -->
+<section class="container">
+  <div class="section-title">VOICEBANKS</div>
 
-  <!-- WORK CARD EXAMPLE -->
   <div class="card">
     <div class="thumb">
       <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
@@ -163,22 +149,72 @@ footer{
       </div>
     </div>
   </div>
+</section>
 
-  <!-- 더 카드 반복 가능 -->
+<!-- WORKS -->
+<section class="container">
+  <div class="section-title">WORKS</div>
+
+  <div class="card">
+    <div class="thumb">
+      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
+    </div>
+    <div class="info">
+      <div class="title">UTAUカバー</div>
+      <div class="desc">
+        Original：Kai様 / Illustration：yoake様<br>
+        Vocal：沢音オフ / Tuning & Mix：沢多恩
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="thumb">
+      <video controls>
+        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4">
+      </video>
+    </div>
+    <div class="info">
+      <div class="title">調声晒し</div>
+      <div class="desc">
+        Original：大沼パセリ様 / VSQX：music_is_genre様<br>
+        Vocal：沢音オフ / Tuning & Mix：沢多恩
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="thumb">
+      <video controls>
+        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4">
+      </video>
+    </div>
+    <div class="info">
+      <div class="title">歌ってみた</div>
+      <div class="desc">
+        Original：seiza様 / Vocal & Mix：沢多恩
+      </div>
+    </div>
+  </div>
 
 </section>
 
-<section id="contact" class="container">
+<!-- CONTACT -->
+<section class="container">
   <div class="section-title">CONTACT</div>
-  <div class="links">
-    <a class="linkBtn" href="mailto:sawadaon3@gmail.com">EMAIL</a>
-    <a class="linkBtn" href="https://www.youtube.com/@sawadaon" target="_blank">YOUTUBE</a>
-    <a class="linkBtn" href="https://x.com/on3ic" target="_blank">TWITTER</a>
+
+  <div class="sns-list">
+    <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
+    <a href="https://x.com/on3ic" target="_blank">X (Twitter)</a>
+  </div>
+
+  <div class="contact-mail">
+    sawadaon3@gmail.com
   </div>
 </section>
 
 <footer>
-  &copy; 2026 Sawada On — All Rights Reserved.
+© 2026 Sawada On — All Rights Reserved.
 </footer>
 
 </body>
