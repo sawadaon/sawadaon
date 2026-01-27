@@ -1,239 +1,181 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<title>沢多恩 | Artist Portfolio</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Sawada On</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
 <style>
+:root{
+  --bg:#0c0f14;
+  --panel:#12161d;
+  --line:#232834;
+  --text:#e8ecf1;
+  --sub:#9aa3ad;
+}
+
+*{box-sizing:border-box;margin:0;padding:0;}
 body{
-  margin:0;
-  font-family:'Noto Sans JP',sans-serif;
-  background:linear-gradient(180deg,#070812,#0c1022 40%,#080914);
-  color:#f2f4ff;
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Inter',sans-serif;
+  line-height:1.7;
 }
 
-/* HERO — 화면 부담 줄인 버전 */
-.hero{
-  min-height:55vh;
-  padding:120px 20px 80px;
+/* NAV */
+nav{
+  width:100%;
+  border-bottom:1px solid var(--line);
+  padding:18px 8%;
   display:flex;
-  flex-direction:column;
-  justify-content:center;
+  justify-content:space-between;
   align-items:center;
-  text-align:center;
-  background:radial-gradient(circle at 50% 40%,#1b2044 0%,#080914 70%);
-}
-
-@media (max-width:768px){
-  .hero{
-    min-height:45vh;
-    padding:90px 15px 60px;
-  }
-}
-
-.hero h1{
-  font-size:3em;
-  letter-spacing:6px;
-  margin:0;
-  background:linear-gradient(90deg,#fff,#9aa7ff,#fff);
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
-}
-
-.hero p{
-  margin-top:20px;
-  color:#c8ccff;
-  max-width:650px;
-  line-height:1.6em;
-}
-
-/* 섹션 */
-.section{
-  padding:70px 20px;
-  max-width:1050px;
-  margin:auto;
-}
-
-.section-title{
-  font-size:1.6em;
-  margin-bottom:40px;
   letter-spacing:2px;
-  border-left:4px solid #6f7dff;
-  padding-left:15px;
+  font-size:13px;
+}
+nav .logo{
+  font-family:'Noto Serif JP',serif;
+  font-size:16px;
+}
+nav ul{
+  display:flex;
+  gap:28px;
+  list-style:none;
+  color:var(--sub);
 }
 
-/* 그리드 */
+/* HERO */
+.hero{
+  padding:100px 8% 70px;
+  max-width:1100px;
+}
+.hero h1{
+  font-family:'Noto Serif JP',serif;
+  font-size:44px;
+  margin-bottom:16px;
+  letter-spacing:1px;
+}
+.hero p{
+  color:var(--sub);
+  max-width:620px;
+  font-size:15px;
+}
+
+/* SECTION BASE */
+.section{
+  padding:70px 8%;
+  border-top:1px solid var(--line);
+}
+.section h2{
+  font-family:'Noto Serif JP',serif;
+  font-size:20px;
+  margin-bottom:30px;
+  letter-spacing:2px;
+}
+
+/* ABOUT */
+.about-box{
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:32px;
+  max-width:700px;
+  font-size:14px;
+  color:var(--sub);
+}
+
+/* WORK GRID */
 .grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:35px;
+  gap:28px;
 }
-
-/* 카드 — 네모 느낌 */
 .card{
-  background:rgba(255,255,255,0.04);
-  border:1px solid rgba(255,255,255,0.08);
-  padding:18px;
-  border-radius:4px;
-  backdrop-filter:blur(8px);
-  box-shadow:0 10px 35px rgba(0,0,0,0.55);
-  transition:0.3s;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:0;
 }
-
-.card:hover{
-  transform:translateY(-6px);
-}
-
-.card img,.card video{
+.card iframe{
   width:100%;
-  border-radius:2px;
-  margin-bottom:15px;
-}
-
-.card h3{
-  margin:0 0 8px 0;
-}
-
-.card p{
-  font-size:0.9em;
-  color:#d2d6ff;
-  line-height:1.5em;
-}
-
-/* 버튼 길게 */
-.btn{
+  height:220px;
   display:block;
-  width:100%;
-  text-align:center;
-  margin-top:14px;
-  padding:12px 0;
-  border-radius:4px;
-  font-weight:700;
-  letter-spacing:1px;
-  background:linear-gradient(90deg,#5865ff,#8f9cff);
-  color:#fff;
-  text-decoration:none;
 }
 
-/* SNS */
-.links{
-  text-align:center;
-  padding:70px 0 40px;
+/* CREDIT TEXT */
+.credit{
+  padding:18px 20px 26px;
+  font-size:13px;
+  color:var(--sub);
+  line-height:1.8;
 }
 
-.links a{
-  margin:0 15px;
-  color:#fff;
-  text-decoration:none;
-  font-weight:700;
-}
-
+/* FOOTER */
 footer{
-  text-align:center;
-  padding:20px;
-  color:#aaa;
+  border-top:1px solid var(--line);
+  padding:40px 8%;
+  font-size:12px;
+  color:var(--sub);
+}
+
+/* RESPONSIVE HERO SIZE FIX */
+@media (max-width:768px){
+  .hero{padding-top:70px}
+  .hero h1{font-size:32px}
 }
 </style>
 </head>
 
 <body>
 
-<!-- HERO -->
+<nav>
+  <div class="logo">SAWADA ON</div>
+  <ul>
+    <li>ABOUT</li>
+    <li>WORKS</li>
+    <li>CONTACT</li>
+  </ul>
+</nav>
+
 <section class="hero">
-  <h1>沢多恩</h1>
+  <h1>Sawada On</h1>
   <p>
-    歌・演奏・調声を中心に活動している沢多恩（さわだおん）です。<br>
-    UTAU音源「沢音オフ」の提供やカバー制作などを行っています。
+    Utaite / Vocal Creator  
+    Emotion-driven vocal expression with a focus on atmosphere and tone.
   </p>
 </section>
 
-<!-- VOICEBANK -->
 <section class="section">
-  <div class="section-title">Voicebank</div>
+  <h2>ABOUT</h2>
+  <div class="about-box">
+    사와다 온(沢多恩) — 우타이테 활동을 중심으로 감정선과 분위기를 살린 보컬 표현을 지향한다.  
+    잔잔하면서도 몰입감 있는 음색과 해석으로 곡의 정서를 전달하는 스타일이다.
+  </div>
+</section>
+
+<section class="section">
+  <h2>UTAU COVER</h2>
+
   <div class="grid">
 
     <div class="card">
-      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/sawaneoff.jpg">
-      <h3>沢音オフ</h3>
-      <p>
-        otoing：파슈様<br>
-        standing：シロマル様<br>
-        special thanks：AisE様<br>
-        voice provider：沢多恩
-      </p>
-      <a class="btn" href="https://bowlroll.net/file/347586" target="_blank">Download</a>
+      <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <div class="credit">
+        Original: —<br>
+        Vocal: Sawada On<br>
+        Mix: —<br>
+        Illustration / Movie: —
+      </div>
     </div>
 
   </div>
 </section>
-
-<!-- WORKS -->
-<section class="section">
-  <div class="section-title">Works</div>
-  <div class="grid">
-
-    <div class="card">
-      <img src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/off_demo.jpg">
-      <h3>UTAUカバー</h3>
-      <p>
-        original：Kai様<br>
-        illustration：yoake様<br>
-        vocal：沢音オフ<br>
-        tuning･mix：沢多恩
-      </p>
-      <a class="btn" href="https://youtu.be/hALBKqm9QFQ" target="_blank">Listen</a>
-    </div>
-
-    <div class="card">
-      <video controls preload="metadata">
-        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/vLMTG3vwJXD6ErSB.mp4" type="video/mp4">
-      </video>
-      <h3>調声晒し</h3>
-      <p>
-        original：大沼パセリ様<br>
-        vsqx：music_is_genre様<br>
-        vocal：沢音オフ<br>
-        tuning･mix：沢多恩
-      </p>
-    </div>
-
-    <div class="card">
-      <video controls preload="metadata">
-        <source src="https://cdn.jsdelivr.net/gh/sawadaon/sawadaon/BzfyFOWZ480h-7C9.mp4" type="video/mp4">
-      </video>
-      <h3>歌ってみた</h3>
-      <p>
-        original：seiza様<br>
-        vocal･mix：沢多恩<br><br>
-        本家様の動画をお借りしてます
-      </p>
-    </div>
-
-    <div class="card">
-      <video controls preload="metadata">
-        <source src="https://github.com/sawadaon/sawadaon/raw/main/Tele.mp4" type="video/mp4">
-      </video>
-      <h3>歌ってみた</h3>
-      <p>
-        original：DECO*27様<br>
-        ed/mix/ma：Juntae kim様<br>
-        vocal：沢多恩<br><br>
-        本家様の動画をお借りしてます
-      </p>
-    </div>
-
-  </div>
-</section>
-
-<!-- SNS -->
-<div class="links">
-  <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-  <a href="https://x.com/on3ic" target="_blank">X / Twitter</a>
-</div>
 
 <footer>
-  contact | sawadaon3@gmail.com
+  © Sawada On
 </footer>
 
 </body>
