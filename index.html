@@ -1,182 +1,144 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sawada On</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>沢多恩</title>
 
-<!-- Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
 :root{
-  --bg:#0c0f14;
-  --panel:#12161d;
-  --line:#232834;
-  --text:#e8ecf1;
-  --sub:#9aa3ad;
+  --bg:#f2f3f6;
+  --panel:#ffffff;
+  --line:#d9dde3;
+  --text:#1a1d21;
+  --sub:#6b7280;
 }
 
-*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
 body{
+  margin:0;
   background:var(--bg);
-  color:var(--text);
   font-family:'Inter',sans-serif;
+  color:var(--text);
   line-height:1.7;
 }
 
-/* NAV */
-nav{
-  width:100%;
-  border-bottom:1px solid var(--line);
-  padding:18px 8%;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  letter-spacing:2px;
-  font-size:13px;
-}
-nav .logo{
-  font-family:'Noto Serif JP',serif;
-  font-size:16px;
-}
-nav ul{
-  display:flex;
-  gap:28px;
-  list-style:none;
-  color:var(--sub);
+/* 상단 */
+header{
+  max-width:900px;
+  margin:80px auto 40px;
+  padding:0 20px;
 }
 
-/* HERO */
-.hero{
-  padding:100px 8% 70px;
-  max-width:1100px;
+h1{
+  font-size:28px;
+  margin:0 0 10px;
+  font-weight:600;
+  letter-spacing:2px;
 }
-.hero h1{
-  font-family:'Noto Serif JP',serif;
-  font-size:44px;
-  margin-bottom:16px;
+
+nav{
+  margin-top:20px;
+  display:flex;
+  gap:25px;
+}
+
+nav a{
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
   letter-spacing:1px;
 }
-.hero p{
-  color:var(--sub);
-  max-width:620px;
-  font-size:15px;
+
+/* 공통 섹션 */
+section{
+  max-width:900px;
+  margin:60px auto;
+  padding:0 20px;
 }
 
-/* SECTION BASE */
-.section{
-  padding:70px 8%;
-  border-top:1px solid var(--line);
-}
-.section h2{
-  font-family:'Noto Serif JP',serif;
-  font-size:20px;
-  margin-bottom:30px;
-  letter-spacing:2px;
-}
-
-/* ABOUT */
-.about-box{
-  background:var(--panel);
-  border:1px solid var(--line);
-  padding:32px;
-  max-width:700px;
+h2{
   font-size:14px;
-  color:var(--sub);
+  letter-spacing:2px;
+  margin-bottom:20px;
 }
 
-/* WORK GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
-  gap:28px;
+/* 소개 */
+.about{
+  border-top:1px solid var(--line);
+  padding-top:25px;
+  color:var(--sub);
+  font-size:14px;
 }
+
+/* 영상 카드 */
 .card{
-  background:var(--panel);
   border:1px solid var(--line);
-  padding:0;
+  background:var(--panel);
+  margin-bottom:40px;
 }
+
 .card iframe{
   width:100%;
-  height:220px;
-  display:block;
+  height:400px;
+  border:0;
 }
 
-/* CREDIT TEXT */
 .credit{
-  padding:18px 20px 26px;
+  padding:18px 22px;
   font-size:13px;
   color:var(--sub);
+  border-top:1px solid var(--line);
   line-height:1.8;
 }
 
-/* FOOTER */
-footer{
+/* contact */
+.contact{
   border-top:1px solid var(--line);
-  padding:40px 8%;
-  font-size:12px;
-  color:var(--sub);
-}
-
-/* RESPONSIVE HERO SIZE FIX */
-@media (max-width:768px){
-  .hero{padding-top:70px}
-  .hero h1{font-size:32px}
+  padding-top:20px;
+  font-size:14px;
 }
 </style>
 </head>
 
 <body>
 
-<nav>
-  <div class="logo">SAWADA ON</div>
-  <ul>
-    <li>ABOUT</li>
-    <li>WORKS</li>
-    <li>CONTACT</li>
-  </ul>
-</nav>
+<header>
+  <h1>沢多恩 / Sawada On</h1>
+  <nav>
+    <a href="#about">ABOUT</a>
+    <a href="#works">WORKS</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
 
-<section class="hero">
-  <h1>Sawada On</h1>
-  <p>
-    Utaite / Vocal Creator  
-    Emotion-driven vocal expression with a focus on atmosphere and tone.
-  </p>
+<section id="about" class="about">
+初めまして、沢多恩（さわだおん）と申します。  
+好きな曲を歌ったり演奏したり調声したりしています。
 </section>
 
-<section class="section">
-  <h2>ABOUT</h2>
-  <div class="about-box">
-    사와다 온(沢多恩) — 우타이테 활동을 중심으로 감정선과 분위기를 살린 보컬 표현을 지향한다.  
-    잔잔하면서도 몰입감 있는 음색과 해석으로 곡의 정서를 전달하는 스타일이다.
+<section id="works">
+<h2>WORKS</h2>
+
+<div class="card">
+  <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
+  <div class="credit">
+    <strong>Original：</strong>Kai様<br>
+    <strong>Vocal：</strong>沢音オフ<br>
+    <strong>Tuning / Mix：</strong>沢多恩<br>
+    <strong>Illustration：</strong>yoake様
   </div>
+</div>
+
 </section>
 
-<section class="section">
-  <h2>UTAU COVER</h2>
-
-  <div class="grid">
-
-    <div class="card">
-      <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ"
-        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
-      <div class="credit">
-        Original: —<br>
-        Vocal: Sawada On<br>
-        Mix: —<br>
-        Illustration / Movie: —
-      </div>
-    </div>
-
-  </div>
+<section id="contact" class="contact">
+<h2>CONTACT</h2>
+sawadaon3@gmail.com
 </section>
-
-<footer>
-  © Sawada On
-</footer>
 
 </body>
 </html>
