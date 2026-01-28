@@ -8,6 +8,9 @@
 <!-- Noto Serif Japanese 폰트 -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 
+<!-- Font Awesome (SNS 아이콘용) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 <style>
 html { scroll-behavior: smooth; box-sizing: border-box; }
 *, *::before, *::after { box-sizing: inherit; }
@@ -57,7 +60,7 @@ nav a:hover { color: #555; }
 /* 섹션 */
 section {
   max-width: 920px;
-  margin: 50px auto;
+  margin: 50px auto 30px auto;
   padding: 0 20px;
 }
 
@@ -65,10 +68,10 @@ section {
 .card {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 50px;
+  margin-bottom: 30px; /* 카드 간격 줄임 */
   border-top: 1px solid #ddd;
-  padding-top: 25px;
-  justify-content: flex-start; /* 왼쪽 정렬 */
+  padding-top: 20px;
+  justify-content: flex-start;
 }
 
 .card .video-wrap {
@@ -76,7 +79,7 @@ section {
   max-width: 560px;
   position: relative;
   padding-top: 56.25%;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 .card .video-wrap iframe,
 .card .video-wrap video {
@@ -97,7 +100,7 @@ section {
 }
 .card .info .title {
   font-weight: 600;
-  font-size: 1.2em;
+  font-size: 1.3em;
   margin-bottom: 8px;
 }
 .card .info .credit {
@@ -109,16 +112,20 @@ section {
   margin: 3px 0;
 }
 
-/* 다운로드 링크 전체 밑줄 */
+/* 다운로드 링크 */
 .card .info .download {
   text-decoration: none;
   font-weight: 600;
   color: #111;
-  border-bottom: 1px solid #111;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   padding-bottom: 2px;
+  border-bottom: 1px solid #111;
+}
+.card .info .download span.arrow {
+  display: inline-block;
+  transform: rotate(45deg);
 }
 .card .info .download:hover {
   color: #0073e6;
@@ -133,10 +140,10 @@ section {
 }
 .sns {
   display: flex;
-  flex-direction: column; /* 세로 정렬 */
+  flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
-  align-items: flex-start;
+  align-items: flex-start; /* 왼쪽 정렬 */
 }
 .sns a {
   font-weight: 600;
@@ -144,29 +151,55 @@ section {
   color: #111;
   position: relative;
   padding-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 .sns a::after {
   content: "↗";
-  position: absolute;
-  right: 0;
-  top: 0;
   font-weight: 600;
+  margin-left: auto;
+}
+
+/* SNS 아이콘 크기 */
+.sns a i {
+  font-size: 18px;
+  vertical-align: middle;
 }
 
 /* Contact */
-#contact {
+#contact-section {
   border-top: 1px solid #ddd;
-  padding-top: 20px;
-  font-size: 14px;
-  max-width: 920px;
-  margin: 0 auto 50px auto;
+  padding-top: 25px;
+  margin-bottom: 50px;
 }
-#contact .email {
+#contact-section h2 {
+  font-weight: 600;
   margin-bottom: 10px;
 }
-#contact .copyright {
+#contact-section .email {
+  font-size: 14px;
+  font-weight: 500;
+  color: #111;
+}
+
+/* Copyright */
+p.copyright {
   font-size: 12px;
   color: #555;
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+/* Fade-in 애니메이션 */
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* 반응형 */
@@ -174,62 +207,62 @@ section {
   .card {
     flex-direction: column;
   }
-  .card .info { padding-left: 0; margin-top: 10px; }
-  .sns { align-items: center; }
+  .card .info { padding-left: 0; margin-top: 15px; }
+  .sns { align-items: flex-start; }
 }
 </style>
 </head>
 
 <body>
 
-<header>
+<header class="fade-in">
   <h1>沢多恩 / Sawada On</h1>
-  <h2>Portfolio</h2>
+  <h2>Artist / Vocal & Music Creator</h2>
 
   <nav>
     <a href="#profile">Profile</a>
     <a href="#voicebanks">ボイスバンク</a>
     <a href="#works">Works</a>
     <a href="#sns">SNS</a>
-    <a href="#contact">Contact</a>
+    <a href="#contact-section">Contact</a>
   </nav>
 </header>
 
 <!-- Profile -->
-<section id="profile">
-<div class="card">
+<section id="profile" class="fade-in">
+<div class="card fade-in">
   <div class="info">
     <div class="title">Profile</div>
-    <p>沢多恩（さわだおん）です。歌唱・演奏・調声を中心に活動しています。楽曲の世界観を大切にしながら作品制作を行っています。</p>
+    <p>歌唱・演奏・調声を中心に活動。作品の世界観を大切に表現します。</p>
   </div>
 </div>
 </section>
 
 <!-- Voice Banks -->
-<section id="voicebanks">
-<h2>ボイスバンク</h2>
+<section id="voicebanks" class="fade-in">
+<h2 class="fade-in">ボイスバンク</h2>
 
-<div class="card">
+<div class="card fade-in">
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Sawada On Voice Bank</div>
     <div class="credit">
-      <p>Original: Sawada On</p>
-      <p>Tuning/Mix: Sawada On</p>
+      <p>Voice Provider: 沢多恩</p>
+      <p>Tuning / Mix: Sawada On</p>
       <p>Special Thanks: AisE</p>
     </div>
-    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download →</a>
+    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span class="arrow">→</span></a>
   </div>
 </div>
 </section>
 
 <!-- Works -->
-<section id="works">
-<h2>Works</h2>
+<section id="works" class="fade-in">
+<h2 class="fade-in">Works</h2>
 
-<div class="card">
+<div class="card fade-in">
   <div class="video-wrap">
     <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
   </div>
@@ -239,12 +272,12 @@ section {
       <p>Original: Kai</p>
       <p>Illustration: yoake</p>
       <p>Vocal: Sawada On</p>
-      <p>Tuning/Mix: Sawada On</p>
+      <p>Tuning / Mix: Sawada On</p>
     </div>
   </div>
 </div>
 
-<div class="card">
+<div class="card fade-in">
   <div class="video-wrap">
     <video controls preload="metadata">
       <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4">
@@ -254,12 +287,12 @@ section {
     <div class="title">Performance 1</div>
     <div class="credit">
       <p>Original: seiza</p>
-      <p>Vocal/Mix: Sawada On</p>
+      <p>Vocal / Mix: Sawada On</p>
     </div>
   </div>
 </div>
 
-<div class="card">
+<div class="card fade-in">
   <div class="video-wrap">
     <video controls preload="metadata">
       <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4">
@@ -269,7 +302,7 @@ section {
     <div class="title">Performance 2</div>
     <div class="credit">
       <p>Original: DECO*27</p>
-      <p>Ed/Mix/MA: Juntae Kim</p>
+      <p>Ed / Mix / MA: Juntae Kim</p>
       <p>Vocal: Sawada On</p>
     </div>
   </div>
@@ -278,19 +311,43 @@ section {
 </section>
 
 <!-- SNS -->
-<section id="sns" class="sns-section">
-<h2>SNS</h2>
-<div class="sns">
-  <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-  <a href="https://twitter.com/on3ic" target="_blank">Twitter</a>
+<section id="sns" class="sns-section fade-in">
+<h2 class="fade-in">SNS</h2>
+<div class="sns fade-in">
+  <a href="https://www.youtube.com/@sawadaon" target="_blank">
+    <i class="fab fa-youtube" style="color:#FF0000;"></i> YouTube
+  </a>
+  <a href="https://twitter.com/on3ic" target="_blank">
+    <i class="fab fa-twitter" style="color:#1DA1F2;"></i> Twitter
+  </a>
 </div>
 </section>
 
 <!-- Contact -->
-<section id="contact">
+<section id="contact-section" class="fade-in">
+<h2>Contact</h2>
 <p class="email">sawadaon3@gmail.com</p>
-<p class="copyright">© 2026 Sawada On. All rights reserved.</p>
 </section>
+
+<!-- Copyright -->
+<p class="copyright">© 2026 Sawada On. All rights reserved.</p>
+
+<!-- Fade-in JS -->
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const faders = document.querySelectorAll('.fade-in');
+  const appearOptions = { threshold: 0.1 };
+  const appearOnScroll = new IntersectionObserver(function(entries, observer){
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, appearOptions);
+  faders.forEach(fader => appearOnScroll.observe(fader));
+});
+</script>
 
 </body>
 </html>
