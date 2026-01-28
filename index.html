@@ -30,10 +30,17 @@ header {
 }
 header h1 {
   margin: 0;
-  font-size: 2.8em;
+  font-size: 2.4em; /* 전체적으로 조금 줄임 */
   font-weight: 600;
   color: #222;
 }
+
+@media (max-width: 600px) {
+  header h1 {
+    font-size: 1.8em; /* 폰에서는 한눈에 들어오도록 */
+  }
+}
+
 header h2 {
   margin: 5px 0 0;
   font-size: 1.2em;
@@ -133,7 +140,7 @@ section {
   font-weight: 600;
   color: #111;
   text-decoration: none;
-  position: relative;         /* ::after 밑줄용 */
+  position: relative;
   padding-bottom: 2px;
 }
 
@@ -142,12 +149,11 @@ section {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 100%;               /* 텍스트+화살표만 */
+  width: max-content;   /* 텍스트+화살표 길이만 */
   height: 1px;
   background-color: currentColor;
   transition: background-color 0.3s;
 }
-
 .card .info .download span.arrow {
   display: inline-block;
   transform: rotate(-45deg);  /* 화살표 회전 */
