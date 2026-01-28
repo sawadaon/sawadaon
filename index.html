@@ -133,14 +133,19 @@ section {
   font-weight: 600;
   color: #111;
   text-decoration: none;
+  position: relative;         /* ::after 밑줄용 */
   padding-bottom: 2px;
+}
 
-  /* 밑줄을 linear-gradient로 텍스트+화살표까지만 */
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 1px;   /* 가로 전체, 높이 1px */
-  background-position: 0 100%; /* 아래쪽에 위치 */
-  background-repeat: no-repeat;
-  transition: color 0.3s, background-color 0.3s;
+.card .info .download::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;               /* 텍스트+화살표만 */
+  height: 1px;
+  background-color: currentColor;
+  transition: background-color 0.3s;
 }
 
 .card .info .download span.arrow {
@@ -150,7 +155,10 @@ section {
 
 .card .info .download:hover {
   color: #0073e6;
-  background-image: linear-gradient(#0073e6, #0073e6);
+}
+
+.card .info .download:hover::after {
+  background-color: #0073e6; /* 호버시 밑줄 색 변경 */
 }
 
 /* SNS */
@@ -253,8 +261,8 @@ p.copyright {
 <div class="card fade-in">
   <div class="info">
     <div class="title">Profile</div>
-    <p>沢多恩（さわだおん）</p>
-    <p>歌唱・演奏・調声を中心に活動してます。</p>
+    <p>沢多恩（さわだおん）</a>
+    <p>vocal mix guitar violin tuning など</p>
   </div>
 </div>
 </section>
