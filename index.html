@@ -30,15 +30,13 @@ header {
 }
 header h1 {
   margin: 0;
-  font-size: 2.4em; /* 전체적으로 조금 줄임 */
+  font-size: 2.4em;
   font-weight: 600;
   color: #222;
 }
 
 @media (max-width: 600px) {
-  header h1 {
-    font-size: 1.8em; /* 폰에서는 한눈에 들어오도록 */
-  }
+  header h1 { font-size: 1.8em; }
 }
 
 header h2 {
@@ -132,9 +130,10 @@ section {
 .card .info .credit p {
   margin: 3px 0;
 }
+
 /* 다운로드 버튼 (텍스트+화살표만 밑줄) */
 .card .info .download {
-  display: inline-flex;       /* 텍스트+화살표 묶음 */
+  display: inline-flex;
   align-items: center;
   gap: 6px;
   font-weight: 600;
@@ -149,22 +148,21 @@ section {
   position: absolute;
   left: 0;
   bottom: 0;
-  width: max-content;   /* 텍스트+화살표 길이만 */
+  width: fit-content;
   height: 1px;
   background-color: currentColor;
   transition: background-color 0.3s;
 }
 .card .info .download span.arrow {
   display: inline-block;
-  transform: rotate(-45deg);  /* 화살표 회전 */
+  transform: rotate(-45deg);
 }
 
 .card .info .download:hover {
   color: #0073e6;
 }
-
 .card .info .download:hover::after {
-  background-color: #0073e6; /* 호버시 밑줄 색 변경 */
+  background-color: #0073e6;
 }
 
 /* SNS */
@@ -267,7 +265,7 @@ p.copyright {
 <div class="card fade-in">
   <div class="info">
     <div class="title">Profile</div>
-    <p>沢多恩（さわだおん）</a>
+    <p>沢多恩（さわだおん）</p>
     <p>vocal・mix・tuning など</p>
   </div>
 </div>
