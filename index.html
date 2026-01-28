@@ -75,11 +75,12 @@ section {
   align-items: flex-start; /* top align */
 }
 
+/* 영상 16:9 고정 */
 .card .video-wrap {
   flex: 1 1 50%;
   max-width: 560px;
   position: relative;
-  padding-top: 56.25%;
+  padding-top: 56.25%; /* 16:9 */
   margin-bottom: 0;
 }
 .card .video-wrap iframe,
@@ -92,6 +93,7 @@ section {
   object-fit: cover;
 }
 
+/* 카드 정보 */
 .card .info {
   flex: 1 1 50%;
   padding-left: 30px;
@@ -113,7 +115,7 @@ section {
   margin: 3px 0;
 }
 
-/* 다운로드 링크 */
+/* 다운로드 링크 (밑줄 텍스트+화살표 끝까지) */
 .card .info .download {
   text-decoration: none;
   font-weight: 600;
@@ -122,12 +124,11 @@ section {
   align-items: center;
   gap: 6px;
   padding-bottom: 2px;
-  border-bottom: 1px solid #111; /* 텍스트 밑줄 */
+  border-bottom: 1px solid #111; /* 텍스트+화살표 밑줄 */
 }
 .card .info .download span.arrow {
   display: inline-block;
   transform: rotate(-45deg); /* 오른쪽 위 */
-  border-bottom: none; /* 화살표 밑줄 제거 */
 }
 .card .info .download:hover {
   color: #0073e6;
@@ -358,5 +359,3 @@ document.addEventListener("DOMContentLoaded", function() {
 
 </body>
 </html>
-
-갑자기 안열려.. 나는 영상만 왼쪽에두고 설명을 오른쪽으로 하려햇던건데
