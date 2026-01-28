@@ -26,7 +26,7 @@ body {
 /* 헤더 */
 header {
   text-align: center;
-  padding: 50px 20px 30px;
+  padding: 50px 20px 30px 20px;
 }
 header h1 {
   margin: 0;
@@ -78,7 +78,7 @@ section {
 .card .video-wrap {
   flex: 0 0 50%;
   max-width: 560px;
-  display: flex; /* 높이 맞춤용 */
+  display: flex; /* iframe/video가 부모 높이 상속 */
 }
 
 .card .video-wrap iframe,
@@ -97,15 +97,18 @@ section {
   justify-content: center;
 }
 
-/* 모바일 반응형 */
-@media(max-width:800px){
-  .card {
-    flex-direction: column;
-  }
-  .card .info { padding-left: 0; margin-top: 15px; }
-  .card .video-wrap { max-width: 100%; height: auto; }
-  .card .video-wrap iframe,
-  .card .video-wrap video { height: 300px; } /* 모바일에서 높이 고정 */
+.card .info .title {
+  font-weight: 600;
+  font-size: 1.3em;
+  margin-bottom: 8px;
+}
+.card .info .credit {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+.card .info .credit p {
+  margin: 3px 0;
 }
 
 /* 다운로드 링크 */
@@ -122,7 +125,7 @@ section {
 .card .info .download span.arrow {
   display: inline-block;
   transform: rotate(-45deg); /* 오른쪽 위 */
-  border-bottom: none; /* 화살표 밑줄 제거 */
+  border-bottom: none;
 }
 .card .info .download:hover {
   color: #0073e6;
@@ -157,8 +160,6 @@ section {
   font-weight: 600;
   margin-left: auto;
 }
-
-/* SNS 아이콘 검정색 */
 .sns a i {
   font-size: 18px;
   vertical-align: middle;
@@ -194,7 +195,7 @@ p.copyright {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  min-height: 1px; /* 공간 확보 */
+  min-height: 1px;
 }
 .fade-in.visible {
   opacity: 1;
@@ -207,7 +208,9 @@ p.copyright {
     flex-direction: column;
   }
   .card .info { padding-left: 0; margin-top: 15px; }
-  .sns { align-items: flex-start; }
+  .card .video-wrap { max-width: 100%; height: auto; }
+  .card .video-wrap iframe,
+  .card .video-wrap video { height: 300px; } /* 모바일에서 높이 고정 */
 }
 </style>
 </head>
@@ -261,57 +264,54 @@ p.copyright {
 
 <!-- Works -->
 <section id="works" class="fade-in">
-  <h2 class="fade-in">Works</h2>
+<h2 class="fade-in">Works</h2>
 
-  <div class="card fade-in">
-    <!-- 영상 왼쪽 -->
-    <div class="video-wrap">
-      <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
-    </div>
-
-    <!-- 설명 오른쪽 -->
-    <div class="info">
-      <div class="title">UTAU Cover</div>
-      <div class="credit">
-        <p>original: Kai</p>
-        <p>illustration: yoake</p>
-        <p>vocal: 沢音オフ</p>
-        <p>tuning / mix: 沢多恩</p>
-      </div>
+<div class="card fade-in">
+  <div class="video-wrap">
+    <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
+  </div>
+  <div class="info">
+    <div class="title">UTAU Cover</div>
+    <div class="credit">
+      <p>original: Kai</p>
+      <p>illustration: yoake</p>
+      <p>vocal: 沢音オフ</p>
+      <p>tuning / mix: 沢多恩</p>
     </div>
   </div>
+</div>
 
-  <div class="card fade-in">
-    <div class="video-wrap">
-      <video controls preload="metadata">
-        <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="info">
-      <div class="title">Cover song</div>
-      <div class="credit">
-        <p>original: Eve</p>
-        <p>ed / mix / ma: かのん</p>
-        <p>vocal: 沢多恩</p>
-      </div>
+<div class="card fade-in">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">Cover song</div>
+    <div class="credit">
+      <p>original: Eve</p>
+      <p>ed / mix / ma: かのん</p>
+      <p>vocal: 沢多恩</p>
     </div>
   </div>
+</div>
 
-  <div class="card fade-in">
-    <div class="video-wrap">
-      <video controls preload="metadata">
-        <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4">
-      </video>
-    </div>
-    <div class="info">
-      <div class="title">Cover song</div>
-      <div class="credit">
-        <p>original: DECO*27</p>
-        <p>ed / mix / ma: Juntae Kim</p>
-        <p>vocal: 沢多恩</p>
-      </div>
+<div class="card fade-in">
+  <div class="video-wrap">
+    <video controls preload="metadata">
+      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4">
+    </video>
+  </div>
+  <div class="info">
+    <div class="title">Cover song</div>
+    <div class="credit">
+      <p>original: DECO*27</p>
+      <p>ed / mix / ma: Juntae Kim</p>
+      <p>vocal: 沢多恩</p>
     </div>
   </div>
+</div>
 
 </section>
 
