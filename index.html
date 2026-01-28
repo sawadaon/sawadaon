@@ -68,14 +68,15 @@ section {
 .card {
   display: flex;
   flex-wrap: wrap;
-  margin-bottom: 30px; /* 카드 간격 줄임 */
+  margin-bottom: 30px;
   border-top: 1px solid #ddd;
   padding-top: 20px;
   justify-content: flex-start;
+  align-items: flex-start; /* top align */
 }
 
 .card .video-wrap {
-  flex: 1 1 480px;
+  flex: 1 1 50%;
   max-width: 560px;
   position: relative;
   padding-top: 56.25%;
@@ -92,7 +93,7 @@ section {
 }
 
 .card .info {
-  flex: 1 1 300px;
+  flex: 1 1 50%;
   padding-left: 30px;
   display: flex;
   flex-direction: column;
@@ -121,11 +122,12 @@ section {
   align-items: center;
   gap: 6px;
   padding-bottom: 2px;
-  border-bottom: 1px solid #111;
+  border-bottom: 1px solid #111; /* 텍스트 밑줄 */
 }
 .card .info .download span.arrow {
   display: inline-block;
-  transform: rotate(45deg);
+  transform: rotate(-45deg); /* 오른쪽 위 */
+  border-bottom: none; /* 화살표 밑줄 제거 */
 }
 .card .info .download:hover {
   color: #0073e6;
@@ -143,7 +145,7 @@ section {
   flex-direction: column;
   gap: 10px;
   justify-content: flex-start;
-  align-items: flex-start; /* 왼쪽 정렬 */
+  align-items: flex-start;
 }
 .sns a {
   font-weight: 600;
@@ -161,10 +163,11 @@ section {
   margin-left: auto;
 }
 
-/* SNS 아이콘 크기 */
+/* SNS 아이콘 검정색 */
 .sns a i {
   font-size: 18px;
   vertical-align: middle;
+  color: #111 !important;
 }
 
 /* Contact */
@@ -196,6 +199,7 @@ p.copyright {
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  min-height: 1px; /* 공간 확보 */
 }
 .fade-in.visible {
   opacity: 1;
@@ -221,7 +225,7 @@ p.copyright {
 
   <nav>
     <a href="#profile">Profile</a>
-    <a href="#voicebanks">ボイスバンク</a>
+    <a href="#voicebanks">Voice bank</a>
     <a href="#works">Works</a>
     <a href="#sns">SNS</a>
     <a href="#contact-section">Contact</a>
@@ -249,7 +253,7 @@ p.copyright {
   <div class="info">
     <div class="title">沢音オフ</div>
     <div class="credit">
-      ＜p>otoing: pasu</p>
+      <p>otoing: pasu</p>
       <p>Illustration: シロマル</p>
       <p>music: AisE</p>
       <p>Voice Provider: 沢多恩</p>
@@ -272,8 +276,8 @@ p.copyright {
     <div class="credit">
       <p>Original: Kai</p>
       <p>Illustration: yoake</p>
-      <p>Vocal: 沢音オフ</p>
-      <p>Tuning / Mix: Sawada On</p>
+      <p>Vocal: 沢多恩</p>
+      <p>Tuning / Mix: 沢多恩</p>
     </div>
   </div>
 </div>
@@ -301,11 +305,11 @@ p.copyright {
     </video>
   </div>
   <div class="info">
-    <div class="title">Cover song </div>
+    <div class="title">Cover song</div>
     <div class="credit">
       <p>Original: DECO*27</p>
       <p>Ed / Mix / MA: Juntae Kim</p>
-      <p>Vocal: Sawada On</p>
+      <p>Vocal: 沢多恩</p>
     </div>
   </div>
 </div>
@@ -317,10 +321,10 @@ p.copyright {
 <h2 class="fade-in">SNS</h2>
 <div class="sns fade-in">
   <a href="https://www.youtube.com/@sawadaon" target="_blank">
-    <i class="fab fa-youtube" style="color:#FF0000;"></i> YouTube
+    <i class="fab fa-youtube"></i> YouTube
   </a>
   <a href="https://twitter.com/on3ic" target="_blank">
-    <i class="fab fa-twitter" style="color:#1DA1F2;"></i> Twitter
+    <i class="fab fa-twitter"></i> Twitter
   </a>
 </div>
 </section>
@@ -332,7 +336,7 @@ p.copyright {
 </section>
 
 <!-- Copyright -->
-<p class="copyright">© 2026 Sawada On. All rights reserved.</p>
+<p class="copyright">© 2026 沢多恩. All rights reserved.</p>
 
 <!-- Fade-in JS -->
 <script>
