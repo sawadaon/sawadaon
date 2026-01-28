@@ -68,14 +68,16 @@ section {
   margin-bottom: 50px;
   border-top: 1px solid #ddd;
   padding-top: 25px;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .card .video-wrap {
-  flex: 1 1 480px;
+  flex: 0 0 480px;  /* 영상 너비 고정 */
   max-width: 560px;
   position: relative;
   padding-top: 56.25%;
-  margin-bottom: 15px;
+  margin-right: 40px;
 }
 .card .video-wrap iframe,
 .card .video-wrap video {
@@ -89,10 +91,9 @@ section {
 
 .card .info {
   flex: 1 1 300px;
-  padding-left: 30px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
 }
 .card .info .title {
   font-weight: 600;
@@ -107,6 +108,8 @@ section {
 .card .info .credit p {
   margin: 3px 0;
 }
+
+/* 다운로드 버튼 */
 .card .info .download {
   text-decoration: underline;
   font-weight: 600;
@@ -115,6 +118,10 @@ section {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+}
+.card .info .download span {
+  display:inline-block;
+  transform: rotate(-45deg); /* 대각선 화살표 느낌 */
 }
 .card .info .download:hover { color: #0073e6; }
 
@@ -126,7 +133,8 @@ section {
 }
 .sns {
   display: flex;
-  gap: 20px;
+  flex-direction: column;
+  gap: 12px;
   justify-content: flex-start;
 }
 .sns a {
@@ -149,6 +157,15 @@ section {
   border-top: 1px solid #ddd;
   padding-top: 20px;
   font-size: 14px;
+  margin-bottom: 30px;
+}
+
+/* Footer 권한 표시 */
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin-bottom: 40px;
 }
 
 /* 반응형 */
@@ -156,8 +173,11 @@ section {
   .card {
     flex-direction: column;
   }
-  .card .info { padding-left: 0; margin-top: 10px; }
-  .sns { justify-content: center; }
+  .card .video-wrap {
+    margin-right: 0;
+    margin-bottom: 15px;
+  }
+  .sns { align-items: flex-start; }
 }
 </style>
 </head>
@@ -202,7 +222,9 @@ section {
       <p>Tuning/Mix: Sawada On</p>
       <p>Special Thanks: AisE</p>
     </div>
-    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span>→</span></a>
+    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">
+      Download <span>→</span>
+    </a>
   </div>
 </div>
 </section>
@@ -264,7 +286,7 @@ section {
 <h2>SNS</h2>
 <div class="sns">
   <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-  <a href="https://x.com/on3ic" target="_blank">X / Twitter</a>
+  <a href="https://x.com/on3ic" target="_blank">Twitter</a>
 </div>
 </section>
 
@@ -272,6 +294,11 @@ section {
 <section id="contact">
 <p>sawadaon3@gmail.com</p>
 </section>
+
+<!-- Footer -->
+<footer>
+<p>© Sawada On. All rights reserved.</p>
+</footer>
 
 </body>
 </html>
