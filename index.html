@@ -79,8 +79,7 @@ section {
   padding-top: 56.25%;
   margin-right: 40px;
 }
-.card .video-wrap iframe,
-.card .video-wrap video {
+.card .video-wrap iframe {
   position: absolute;
   top:0; left:0;
   width:100%;
@@ -121,7 +120,7 @@ section {
 }
 .card .info .download span {
   display:inline-block;
-  transform: rotate(-45deg); /* 대각선 화살표 느낌 */
+  transform: rotate(-45deg); /* 대각선 화살표 ↗ */
 }
 .card .info .download:hover { color: #0073e6; }
 
@@ -250,9 +249,7 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/QkcdLXbsLZ7JxoZk.mp4?raw=true" type="video/mp4">
-    </video>
+    <iframe src="https://www.youtube.com/embed/QkcdLXbsLZ7JxoZk" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Performance 1</div>
@@ -265,9 +262,7 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/Tele.mp4?raw=true" type="video/mp4">
-    </video>
+    <iframe src="https://www.youtube.com/embed/Tele_video_ID" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Performance 2</div>
