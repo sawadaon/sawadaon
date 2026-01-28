@@ -78,8 +78,10 @@ section {
   position: relative;
   padding-top: 56.25%;
   margin-right: 40px;
+  background-color: #e0e0e0; /* 영상 없는 빈칸 표시 */
 }
-.card .video-wrap iframe {
+.card .video-wrap iframe,
+.card .video-wrap video {
   position: absolute;
   top:0; left:0;
   width:100%;
@@ -88,6 +90,7 @@ section {
   object-fit: cover;
 }
 
+/* 카드 info */
 .card .info {
   flex: 1 1 300px;
   display: flex;
@@ -212,7 +215,8 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
+    <!-- 영상 빈칸 -->
+    <iframe src="" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Sawada On Voice Bank</div>
@@ -234,7 +238,7 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/hALBKqm9QFQ" allowfullscreen></iframe>
+    <iframe src="" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">UTAU Cover</div>
@@ -249,7 +253,7 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/QkcdLXbsLZ7JxoZk" allowfullscreen></iframe>
+    <iframe src="" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Performance 1</div>
@@ -262,7 +266,7 @@ footer {
 
 <div class="card">
   <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/Tele_video_ID" allowfullscreen></iframe>
+    <iframe src="" allowfullscreen></iframe>
   </div>
   <div class="info">
     <div class="title">Performance 2</div>
