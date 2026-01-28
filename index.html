@@ -115,32 +115,35 @@ section {
   margin: 3px 0;
 }
 
-/* 다운로드 버튼 (화살표까지 깔끔하게 밑줄) */
+/* 다운로드 버튼 (텍스트+화살표 밑줄만) */
 .card .info .download {
-  display: inline-flex;       /* 텍스트+화살표 묶음 */
-  align-items: center;
-  gap: 6px;
+  text-decoration: none;
   font-weight: 600;
   color: #111;
-  text-decoration: none;
-  padding-bottom: 2px;
-
-  /* 밑줄을 linear-gradient로 */
-  background-image: linear-gradient(currentColor, currentColor);
-  background-size: 100% 1px;   /* 가로 전체, 높이 1px */
-  background-position: 0 100%; /* 아래쪽에 위치 */
-  background-repeat: no-repeat;
-  transition: color 0.3s, background-color 0.3s;
+  display: inline-block;
 }
 
-.card .info .download span.arrow {
+.card .info .download .underline {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding-bottom: 2px;
+  border-bottom: 1px solid currentColor; /* 텍스트+화살표 밑줄 */
+  transition: border-color 0.3s, color 0.3s;
+}
+
+.card .info .download .arrow {
   display: inline-block;
   transform: rotate(-45deg);  /* 화살표 회전 */
+  line-height: 0;
 }
 
 .card .info .download:hover {
   color: #0073e6;
-  background-image: linear-gradient(#0073e6, #0073e6); /* 호버시 밑줄 색 변경 */
+}
+
+.card .info .download:hover .underline {
+  border-color: #0073e6; /* 호버 시 밑줄 색 변경 */
 }
 
 /* SNS */
@@ -268,7 +271,10 @@ p.copyright {
       <p>music: AisE</p>
       <p>voice provider: 沢多恩</p>
     </div>
-    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span class="arrow">→</span></a>
+    <!-- 다운로드 버튼 수정 적용 -->
+    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">
+      <span class="underline">Download <span class="arrow">→</span></span>
+    </a>
   </div>
 </div>
 </section>
