@@ -68,6 +68,7 @@ section {
   margin-bottom: 50px;
   border-top: 1px solid #ddd;
   padding-top: 25px;
+  justify-content: flex-start; /* 왼쪽 정렬 */
 }
 
 .card .video-wrap {
@@ -107,16 +108,22 @@ section {
 .card .info .credit p {
   margin: 3px 0;
 }
+
+/* 다운로드 링크 전체 밑줄 */
 .card .info .download {
-  text-decoration: underline;
+  text-decoration: none;
   font-weight: 600;
   color: #111;
-  cursor: pointer;
+  border-bottom: 1px solid #111;
   display: inline-flex;
   align-items: center;
   gap: 6px;
+  padding-bottom: 2px;
 }
-.card .info .download:hover { color: #0073e6; }
+.card .info .download:hover {
+  color: #0073e6;
+  border-color: #0073e6;
+}
 
 /* SNS */
 .sns-section {
@@ -126,8 +133,10 @@ section {
 }
 .sns {
   display: flex;
-  gap: 20px;
+  flex-direction: column; /* 세로 정렬 */
+  gap: 10px;
   justify-content: flex-start;
+  align-items: flex-start;
 }
 .sns a {
   font-weight: 600;
@@ -149,6 +158,15 @@ section {
   border-top: 1px solid #ddd;
   padding-top: 20px;
   font-size: 14px;
+  max-width: 920px;
+  margin: 0 auto 50px auto;
+}
+#contact .email {
+  margin-bottom: 10px;
+}
+#contact .copyright {
+  font-size: 12px;
+  color: #555;
 }
 
 /* 반응형 */
@@ -157,7 +175,7 @@ section {
     flex-direction: column;
   }
   .card .info { padding-left: 0; margin-top: 10px; }
-  .sns { justify-content: center; }
+  .sns { align-items: center; }
 }
 </style>
 </head>
@@ -202,7 +220,7 @@ section {
       <p>Tuning/Mix: Sawada On</p>
       <p>Special Thanks: AisE</p>
     </div>
-    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span>→</span></a>
+    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download →</a>
   </div>
 </div>
 </section>
@@ -229,7 +247,7 @@ section {
 <div class="card">
   <div class="video-wrap">
     <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/QkcdLXbsLZ7JxoZk.mp4?raw=true" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4">
     </video>
   </div>
   <div class="info">
@@ -244,7 +262,7 @@ section {
 <div class="card">
   <div class="video-wrap">
     <video controls preload="metadata">
-      <source src="https://github.com/sawadaon/sawadaon/blob/main/Tele.mp4?raw=true" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4">
     </video>
   </div>
   <div class="info">
@@ -264,13 +282,14 @@ section {
 <h2>SNS</h2>
 <div class="sns">
   <a href="https://www.youtube.com/@sawadaon" target="_blank">YouTube</a>
-  <a href="https://x.com/on3ic" target="_blank">X / Twitter</a>
+  <a href="https://twitter.com/on3ic" target="_blank">Twitter</a>
 </div>
 </section>
 
 <!-- Contact -->
 <section id="contact">
-<p>sawadaon3@gmail.com</p>
+<p class="email">sawadaon3@gmail.com</p>
+<p class="copyright">© 2026 Sawada On. All rights reserved.</p>
 </section>
 
 </body>
