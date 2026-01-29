@@ -5,10 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>沢多恩 / Sawada On</title>
 
-<!-- Noto Serif Japanese 폰트 -->
 <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-
-<!-- Font Awesome (SNS 아이콘용) -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -24,119 +21,52 @@ body {
 }
 
 /* 헤더 */
-header {
-  text-align: center;
-  padding: 50px 20px 30px;
-}
-header h1 {
-  margin: 0;
-  font-size: 2.4em;
-  font-weight: 600;
-  color: #222;
-}
-
-@media (max-width: 600px) {
-  header h1 { font-size: 1.8em; }
-}
-
-header h2 {
-  margin: 5px 0 0;
-  font-size: 1.2em;
-  font-weight: 400;
-  color: #555;
-}
+header { text-align: center; padding: 50px 20px 30px; }
+header h1 { margin: 0; font-size: 2.4em; font-weight: 600; color: #222; }
+@media (max-width: 600px) { header h1 { font-size: 1.8em; } }
+header h2 { margin: 5px 0 0; font-size: 1.2em; font-weight: 400; color: #555; }
 
 /* 메뉴 */
-nav {
-  margin-top: 25px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
-  font-size: 14px;
-}
-nav a {
-  text-decoration: none;
-  color: #111;
-  font-weight: 600;
-  transition: color 0.3s;
-}
+nav { margin-top: 25px; display: flex; justify-content: center; gap: 30px; font-size: 14px; }
+nav a { text-decoration: none; color: #111; font-weight: 600; transition: color 0.3s; }
 nav a:hover { color: #555; }
 
 /* 섹션 */
-section {
-  max-width: 920px;
-  margin: 50px auto 30px auto;
-  padding: 0 20px;
-}
+section { max-width: 920px; margin: 50px auto 30px; padding: 0 20px; }
 
 /* 카드 */
-.card {
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 30px;
-  border-top: 1px solid #ddd;
-  padding-top: 20px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
+.card { display: flex; flex-wrap: wrap; margin-bottom: 30px; border-top: 1px solid #ddd; padding-top: 20px; align-items: flex-start; }
 
-/* 영상 크기 부담 줄이기 */
 .card .video-wrap {
   flex: 1 1 50%;
   max-width: 560px;
   width: 100%;
   position: relative;
-  padding-top: 56.25%; /* 16:9 비율 */
+  padding-top: 56.25%;
 }
 
-/* 유튜브 영상은 테두리 없음 */
-.card .video-wrap iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
-  object-fit: cover;
-}
-
-/* mp4 영상만 얇은 검정 테두리 */
+.card .video-wrap iframe,
 .card .video-wrap video {
   position: absolute;
   top: 0; left: 0;
-  width: 100%;
-  height: 100%;
-  border: 1px solid #111;
+  width: 100%; height: 100%;
   object-fit: cover;
 }
+.card .video-wrap video { border: 1px solid #111; }
 
-/* 카드 정보 */
-.card .info {
-  flex: 1 1 50%;
-  padding-left: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.card .info .title {
-  font-weight: 600;
-  font-size: 1.3em;
-  margin-bottom: 8px;
-}
-.card .info .credit {
-  font-size: 14px;
-  color: #555;
-  margin-bottom: 12px;
-}
-.card .info .credit p {
-  margin: 3px 0;
-}
+.card .info { flex: 1 1 50%; padding-left: 30px; display: flex; flex-direction: column; justify-content: center; }
+.card .info .title { font-weight: 600; font-size: 1.3em; margin-bottom: 8px; }
+.card .info .credit { font-size: 14px; color: #555; margin-bottom: 12px; }
+.card .info .credit p { margin: 3px 0; }
 
+/* ⭐ note 스타일 */
 .card .info .credit p.note {
   font-size: 12px;
   color: #777;
+  margin-top: 8px;
 }
 
-/* 다운로드 버튼 (텍스트+화살표만 밑줄) */
+/* 다운로드 */
 .card .info .download {
   display: inline-flex;
   align-items: center;
@@ -147,106 +77,35 @@ section {
   position: relative;
   padding-bottom: 2px;
 }
-
 .card .info .download::after {
   content: "";
   position: absolute;
-  left: 0;
-  bottom: 0;
-  width: fit-content;
-  height: 1px;
+  left: 0; bottom: 0;
+  width: 100%; height: 1px;
   background-color: currentColor;
-  transition: background-color 0.3s;
 }
-.card .info .download span.arrow {
-  display: inline-block;
-  transform: rotate(-45deg);
-}
-
-.card .info .download:hover {
-  color: #0073e6;
-}
-.card .info .download:hover::after {
-  background-color: #0073e6;
-}
+.card .info .download span.arrow { transform: rotate(-45deg); }
+.card .info .download:hover { color: #0073e6; }
 
 /* SNS */
-.sns-section {
-  border-top: 1px solid #ddd;
-  padding-top: 25px;
-  margin-bottom: 50px;
-}
-.sns {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  justify-content: flex-start;
-  align-items: flex-start;
-}
-.sns a {
-  font-weight: 600;
-  text-decoration: none;
-  color: #111;
-  position: relative;
-  padding-right: 20px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.sns a::after {
-  content: "↗";
-  font-weight: 600;
-  margin-left: auto;
-}
-.sns a i {
-  font-size: 18px;
-  vertical-align: middle;
-  color: #111 !important;
-}
+.sns-section { border-top: 1px solid #ddd; padding-top: 25px; margin-bottom: 50px; }
+.sns { display: flex; flex-direction: column; gap: 10px; }
+.sns a { font-weight: 600; text-decoration: none; color: #111; display: flex; align-items: center; gap: 8px; }
+.sns a::after { content: "↗"; margin-left: auto; }
 
 /* Contact */
-#contact-section {
-  border-top: 1px solid #ddd;
-  padding-top: 25px;
-  margin-bottom: 50px;
-}
-#contact-section h2 {
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-#contact-section .email {
-  font-size: 14px;
-  font-weight: 500;
-  color: #111;
-}
+#contact-section { border-top: 1px solid #ddd; padding-top: 25px; margin-bottom: 50px; }
 
 /* Copyright */
-p.copyright {
-  font-size: 12px;
-  color: #555;
-  text-align: center;
-  margin-bottom: 50px;
-}
+p.copyright { font-size: 12px; color: #555; text-align: center; margin-bottom: 50px; }
 
-/* Fade-in 애니메이션 */
-.fade-in {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  min-height: 1px;
-}
-.fade-in.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
+/* Fade */
+.fade-in { opacity: 0; transform: translateY(30px); transition: opacity .8s, transform .8s; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
 
-/* 반응형 */
 @media(max-width:800px){
-  .card {
-    flex-direction: column;
-  }
+  .card { flex-direction: column; }
   .card .info { padding-left: 0; margin-top: 15px; }
-  .sns { align-items: flex-start; }
 }
 </style>
 </head>
@@ -265,112 +124,87 @@ p.copyright {
   </nav>
 </header>
 
-<!-- Profile -->
 <section id="profile" class="fade-in">
-<div class="card fade-in">
-  <div class="info">
-    <div class="title">Profile</div>
-    <p>沢多恩（さわだおん）</p>
-    <p>vocal・mix・tuning など</p>
-  </div>
-</div>
+<div class="card"><div class="info"><div class="title">Profile</div>
+<p>沢多恩（さわだおん）</p><p>vocal・mix・tuning など</p>
+</div></div>
 </section>
 
-<!-- Voice Banks -->
 <section id="voicebanks" class="fade-in">
-<h2 class="fade-in">Voice bank</h2>
-<div class="card fade-in">
-  <div class="video-wrap">
-    <iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
-  </div>
-  <div class="info">
-    <div class="title">沢音オフ</div>
-    <div class="credit">
-      <p>otoing: pasu</p>
-      <p>illustration: シロマル</p>
-      <p>demo music: AisE</p>
-      <p>voice provider: 沢多恩</p>
-    </div>
-    <a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span class="arrow">→</span></a>
-  </div>
+<h2>Voice bank</h2>
+<div class="card">
+<div class="video-wrap">
+<iframe src="https://www.youtube.com/embed/k8BRzEfS0LE" allowfullscreen></iframe>
+</div>
+<div class="info">
+<div class="title">沢音オフ</div>
+<div class="credit">
+<p>otoing: pasu</p>
+<p>illustration: シロマル</p>
+<p>demo music: AisE</p>
+<p>voice provider: 沢多恩</p>
+</div>
+<a class="download" href="https://bowlroll.net/file/347586" target="_blank">Download <span class="arrow">→</span></a>
+</div>
 </div>
 </section>
 
-<!-- Works -->
 <section id="works" class="fade-in">
-<h2 class="fade-in">Works</h2>
+<h2>Works</h2>
 
-<div class="card fade-in">
-  <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="info">
-    <div class="title">ゴーストアベニュー</div>
-    <div class="credit">
-      <p>music: Eve</p>
-      <p>ed / mix / ma: かのん</p>
-      <p>covered by: 沢多恩</p>
-      <p class="note">本家様の動画をお借りしてます</p>
-    </div>
-  </div>
+<div class="card">
+<div class="video-wrap">
+<video controls preload="metadata"><source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/QkcdLXbsLZ7JxoZk.mp4" type="video/mp4"></video>
+</div>
+<div class="info">
+<div class="title">ゴーストアベニュー</div>
+<div class="credit">
+<p>music: Eve</p>
+<p>ed / mix / ma: かのん</p>
+<p>covered by: 沢多恩</p>
+<p class="note">本家様の動画をお借りしてます</p>
+</div>
+</div>
 </div>
 
-<div class="card fade-in">
-  <div class="video-wrap">
-    <video controls preload="metadata">
-      <source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4">
-    </video>
-  </div>
-  <div class="info">
-    <div class="title">テレパシ</div>
-    <div class="credit">
-      <p>music: DECO*27</p>
-      <p>ed / mix / ma: Juntae Kim</p>
-      <p>covered by: 沢多恩</p>
-      <p class="note">本家様の動画をお借りしてます</p>
-    </div>
-  </div>
+<div class="card">
+<div class="video-wrap">
+<video controls preload="metadata"><source src="https://raw.githubusercontent.com/sawadaon/sawadaon/main/Tele.mp4" type="video/mp4"></video>
+</div>
+<div class="info">
+<div class="title">テレパシ</div>
+<div class="credit">
+<p>music: DECO*27</p>
+<p>ed / mix / ma: Juntae Kim</p>
+<p>covered by: 沢多恩</p>
+<p class="note">本家様の動画をお借りしてます</p>
+</div>
+</div>
 </div>
 </section>
 
-<!-- SNS -->
 <section id="sns" class="sns-section fade-in">
-<h2 class="fade-in">SNS</h2>
-<div class="sns fade-in">
-  <a href="https://www.youtube.com/@sawadaon" target="_blank">
-    <i class="fab fa-youtube"></i> YouTube
-  </a>
-  <a href="https://twitter.com/on3ic" target="_blank">
-    <i class="fab fa-twitter"></i> Twitter
-  </a>
+<h2>SNS</h2>
+<div class="sns">
+<a href="https://www.youtube.com/@sawadaon" target="_blank"><i class="fab fa-youtube"></i> YouTube</a>
+<a href="https://twitter.com/on3ic" target="_blank"><i class="fab fa-twitter"></i> Twitter</a>
 </div>
 </section>
 
-<!-- Contact -->
 <section id="contact-section" class="fade-in">
 <h2>Contact</h2>
 <p class="email">sawadaon3@gmail.com</p>
 </section>
 
-<!-- Copyright -->
 <p class="copyright">© 2025 Sawada On. All rights reserved.</p>
 
-<!-- Fade-in JS -->
 <script>
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", () => {
   const faders = document.querySelectorAll('.fade-in');
-  const appearOptions = { threshold: 0.1 };
-  const appearOnScroll = new IntersectionObserver(function(entries, observer){
-    entries.forEach(entry => {
-      if(entry.isIntersecting){
-        entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
-      }
-    });
-  }, appearOptions);
-  faders.forEach(fader => appearOnScroll.observe(fader));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  });
+  faders.forEach(el => io.observe(el));
 });
 </script>
 
